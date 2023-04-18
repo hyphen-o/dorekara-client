@@ -1,0 +1,18 @@
+version: '3.9'
+
+volumes:
+  node_modules:
+  next:
+
+services:
+  node:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: dorekara-app
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app/:/works
+      - node_modules:/works/node_modules
+      - next:/works/.next
