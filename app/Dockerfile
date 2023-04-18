@@ -5,6 +5,8 @@ WORKDIR /works
 COPY ./.yarnrc.yml ./package.json ./yarn.lock works/
 COPY ./.yarn ./.yarn
 
+RUN yarn install
+
 COPY . /works
 
 EXPOSE 3000
