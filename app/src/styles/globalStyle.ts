@@ -6,5 +6,6 @@ export const globalStyle = () => css`
     font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN',
       'Hiragino Sans', 'Meiryo', -apple-system, BlinkMacSystemFont, system-ui,
       sans-serif;
+    color: red;
   }
 `
