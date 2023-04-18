@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next dev",
     "lint": "next lint -d ./ --ignore-path .gitignore",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check": "yarn lint && prettier --check"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
