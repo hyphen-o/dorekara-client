@@ -9,5 +9,4 @@ RUN yarn install
 
 COPY . /works
 
-EXPOSE 3000
 CMD ["yarn", "dev"]

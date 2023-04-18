@@ -8,7 +8,6 @@ services:
   node:
     build:
       context: ./app
-      dockerfile: Dockerfile
     container_name: dorekara-app
     ports:
       - 3000:3000
