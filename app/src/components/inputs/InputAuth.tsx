@@ -1,25 +1,34 @@
-import { styles } from "@/styles/components/inputs/inputtext.style";
-import { FC } from "react";
-import { Path, UseFormRegister } from "react-hook-form";
+import { styles } from '@/styles/components/inputs/InputAuth.style'
+import { FC } from 'react'
+import { Path, UseFormRegister } from 'react-hook-form'
 
 type FormValues = {
-  username: string,
-  password: string,
+  name: string
+  password: string
+  confirmPassword?: string
 }
 
 type InputProps = {
-  register: UseFormRegister<FormValues>,
-  label: Path<FormValues>,
-  required: boolean,
+  submit: UseFormRegister<FormValues>
+  label: Path<FormValues>
+  confirm?: string
 }
 
-const InputAuth: FC<InputProps> = ({ register, label, required }) => {
+const InputAuth: FC<InputProps> = ({ submit, label, confirm }) => {
 
   return (
     <>
-       <input css={styles.input} {...register(label, { required })} type="text" placeholder={label}/>
+      <input
+        css={styles.input}
+        {...submit(label, { required: true, 
+                            minLength: label==='name' ? 4 : 8, 
+                            validate:  (value): boolean => confirm && value === confirm 
+                          })}
+        type={label==='name' ? 'text' : 'password'}
+        placeholder={label}
+      />
     </>
   )
 }
 
-export default InputAuth;
+export default InputAuth

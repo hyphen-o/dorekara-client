@@ -3,21 +3,21 @@ import Container from '@/components/containers/Container'
 import AuthLogo from '@/components/images/AuthLogo'
 import { styles } from '@/styles/pages/Login.style'
 import TransButton from '@/components/buttons/TransButton'
-import LoginForm from '@/components/forms/LoginForm'
+import RegisterForm from '@/components/forms/RegisterForm'
 
-const Login: NextPage = () => {
+const Register: NextPage = () => {
   return (
     <>
       <Container>
         <div css={styles.wrapper}>
           <AuthLogo />
-          <LoginForm />
-          <p css={styles.text}>新規登録はこちら</p>
-          <TransButton text='新規登録' pageLink='/register' />
+          <RegisterForm />
+          <p css={styles.text}>登録済みの方はこちら</p>
+          <TransButton text='ログイン' pageLink='/login' />
         </div>
       </Container>
     </>
   )
 }
 
-export default Login
+export default Register

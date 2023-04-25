@@ -1,19 +1,19 @@
-import { color } from "@/styles/theme";
-import { css } from "@emotion/react";
+import { color } from '@/styles/theme'
+import { css } from '@emotion/react'
 
 export const styles = {
-  button: ({ isSubmit }) => { 
+  button: ({ isSubmit }) => {
     return css`
-    border-radius: 100px;
-    height: 43px;
-    width: 260px;
-    border: ${isSubmit ? 'none' : 'solid' + color.red};
-    color: ${isSubmit ? color.white : color.red};
-    background-color: ${isSubmit ? color.red : color.white};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-  `
-  }
+      border-radius: 100px;
+      height: 43px;
+      width: 260px;
+      border: ${isSubmit ? 'none' : 'solid' + color.red};
+      color: ${isSubmit ? color.white : color.red};
+      background-color: ${isSubmit ? color.red : color.white};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    `
+  },
 }
