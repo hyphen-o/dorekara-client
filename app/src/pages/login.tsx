@@ -1,8 +1,8 @@
-import { styles } from '@/styles/pages/Login.style'
 import TransButton from '@/components/buttons/TransButton'
 import LoginForm from '@/components/forms/LoginForm'
 import { AuthLayout } from '@/components/layouts/AuthLayout'
 import { NextPageWithLayout } from '@/components/types/Layout.type'
+import { styles } from '@/styles/pages/Login.style'
 
 const Login: NextPageWithLayout = () => {
   return (
