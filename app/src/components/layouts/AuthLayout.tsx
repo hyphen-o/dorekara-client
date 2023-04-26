@@ -8,9 +8,7 @@ export const AuthLayout: GetLayout = (page) => {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    if(token) {
-      router.push('home')
-    }
+    if(token) router.push('home')
   })
 
   return (

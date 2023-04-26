@@ -1,11 +1,16 @@
-import { NextPage } from 'next'
+import SingButton from '@/components/buttons/SingButton'
+import { AppLayout } from '@/components/layouts/AppLayout'
+import { NextPageWithLayout } from '@/components/types/Layout.type'
 
-const Home: NextPage = () => {
+const home: NextPageWithLayout = () => {
   return (
     <>
+      <SingButton></SingButton>
       <h1>This is Home</h1>
     </>
   )
 }
 
-export default Home
+home.getLayout = AppLayout
+
+export default home
