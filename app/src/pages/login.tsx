@@ -1,23 +1,21 @@
-import { NextPage } from 'next'
-import Container from '@/components/containers/Container'
-import AuthLogo from '@/components/images/AuthLogo'
 import { styles } from '@/styles/pages/Login.style'
 import TransButton from '@/components/buttons/TransButton'
 import LoginForm from '@/components/forms/LoginForm'
+import { AuthLayout } from '@/components/layouts/AuthLayout'
+import { NextPageWithLayout } from '@/components/types/Layout.type'
 
-const Login: NextPage = () => {
+const Login: NextPageWithLayout = () => {
   return (
     <>
-      <Container>
         <div css={styles.wrapper}>
-          <AuthLogo />
           <LoginForm />
           <p css={styles.text}>新規登録はこちら</p>
           <TransButton text='新規登録' pageLink='/register' />
         </div>
-      </Container>
     </>
   )
 }
+
+Login.getLayout = AuthLayout
 
 export default Login
