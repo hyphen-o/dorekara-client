@@ -1,9 +1,9 @@
-import { NextPage } from "next"
-
+import { NextPage } from 'next'
 
 const Home: NextPage = () => {
   return (
     <>
+      <h1>This is Home</h1>
     </>
   )
 }

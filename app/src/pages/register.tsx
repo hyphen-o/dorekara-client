@@ -1,21 +1,21 @@
 import { styles } from '@/styles/pages/Login.style'
 import TransButton from '@/components/buttons/TransButton'
-import LoginForm from '@/components/forms/LoginForm'
+import RegisterForm from '@/components/forms/RegisterForm'
 import { AuthLayout } from '@/components/layouts/AuthLayout'
 import { NextPageWithLayout } from '@/components/types/Layout.type'
 
-const Login: NextPageWithLayout = () => {
+const Register: NextPageWithLayout = () => {
   return (
     <>
         <div css={styles.wrapper}>
-          <LoginForm />
-          <p css={styles.text}>新規登録はこちら</p>
-          <TransButton text='新規登録' pageLink='/register' />
+          <RegisterForm />
+          <p css={styles.text}>登録済みの方はこちら</p>
+          <TransButton text='ログイン' pageLink='/login' />
         </div>
     </>
   )
 }
 
-Login.getLayout = AuthLayout
+Register.getLayout = AuthLayout
 
-export default Login
+export default Register
