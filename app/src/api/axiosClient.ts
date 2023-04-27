@@ -1,12 +1,13 @@
 import axios from "axios";
 
-export const axiosClient = axios.create({
+export const axiosClient = ((token) => axios.create({
   baseURL: 'http://localhost/api/',
   headers: {
     'Content-Type': 'application/json',
     "Access-Control-Allow-Origin": "*",
+    'Authorization': `Bearer ${token}`,
   }
-});
+}));
 
 axios.interceptors.request.use((config) => {
   return config;

@@ -2,9 +2,10 @@ import { color } from '@/styles/theme'
 import { css } from '@emotion/react'
 
 export const styles = {
-  header: css`
+  header: (isHome) =>css`
     background-color: ${color.red};
-    height: 254px;
-    padding-top: 30px;
+    height: ${isHome ? '254px' : '210px'};
+    padding-top: 25px;
+    margin-bottom: 132px;
   `,
 }

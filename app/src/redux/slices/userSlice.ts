@@ -17,9 +17,6 @@ export const userSlice = createSlice({
     setUser: (state, action: PayloadAction<User>) => {
       state = action.payload
     },
-    reset: (): User => {
-      return initialState
-    }
   }
 })
 
