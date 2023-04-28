@@ -7,11 +7,11 @@ import { NextPageWithLayout } from '@/components/types/Layout.type'
 const Register: NextPageWithLayout = () => {
   return (
     <>
-        <div css={styles.wrapper}>
-          <RegisterForm />
-          <p css={styles.text}>登録済みの方はこちら</p>
-          <TransButton text='ログイン' pageLink='/login' />
-        </div>
+      <div css={styles.wrapper}>
+        <RegisterForm />
+        <p css={styles.text}>登録済みの方はこちら</p>
+        <TransButton text='ログイン' pageLink='/login' />
+      </div>
     </>
   )
 }

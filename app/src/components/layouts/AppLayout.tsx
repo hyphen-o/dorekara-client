@@ -1,31 +1,28 @@
-import { styles } from '@/styles/components/layouts/AppLayout.styles';
-import { GetLayout } from "../types/Layout.type";
-import AppLogo from '../images/AppLogo';
-import LogoText from '../texts/LogoText';
-import { FC, ReactNode, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { styles } from '@/styles/components/layouts/AppLayout.styles'
+import { GetLayout } from '../types/Layout.type'
+import AppLogo from '../images/AppLogo'
+import LogoText from '../texts/LogoText'
+import { FC, ReactNode, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const AppLayout: FC<LayoutProps> = ({ children, isHome }) => {
   const router = useRouter()
 
-  useEffect(()=> {
+  useEffect(() => {
     const token = localStorage.getItem('token')
-    if(!token) router.push('login');
+    if (!token) router.push('login')
   })
 
   return (
     <>
-      <header css={styles.header} >
+      <header css={styles.header}>
         <AppLogo />
-        <LogoText /> 
+        <LogoText />
         {isHome}
       </header>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </>
   )
-  
 }
 
 type LayoutProps = {
@@ -33,7 +30,7 @@ type LayoutProps = {
   isHome: boolean
 }
 
-export const createGetAppLayout = ( layoutProps?: LayoutProps ): GetLayout => {
+export const createGetAppLayout = (layoutProps?: LayoutProps): GetLayout => {
   return function getLayout(page) {
     return <AppLayout {...layoutProps}>{page}</AppLayout>
   }

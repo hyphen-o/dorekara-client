@@ -12,7 +12,7 @@ const home: NextPageWithLayout = () => {
       <SingButton></SingButton>
       <div css={styles.wrapper}>
         <HomeMenuButton text='曲一覧' page='songs'></HomeMenuButton>
-        <HomeMenuButton text='アーティスト一覧'page='artists'></HomeMenuButton>
+        <HomeMenuButton text='アーティスト一覧' page='artists'></HomeMenuButton>
         <HomeMenuButton text='カラオケ履歴' page='histories'></HomeMenuButton>
       </div>
     </>

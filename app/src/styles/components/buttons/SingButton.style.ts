@@ -6,5 +6,5 @@ export const styles = {
     transform: translate(-50%, -50%);
     top: 33%; /*追記*/
     left: 50%; /*追記*/
-  `
+  `,
 }

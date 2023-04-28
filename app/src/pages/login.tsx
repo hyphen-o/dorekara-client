@@ -7,11 +7,11 @@ import { styles } from '@/styles/pages/Login.style'
 const Login: NextPageWithLayout = () => {
   return (
     <>
-        <div css={styles.wrapper}>
-          <LoginForm />
-          <p css={styles.text}>新規登録はこちら</p>
-          <TransButton text='新規登録' pageLink='/register' />
-        </div>
+      <div css={styles.wrapper}>
+        <LoginForm />
+        <p css={styles.text}>新規登録はこちら</p>
+        <TransButton text='新規登録' pageLink='/register' />
+      </div>
     </>
   )
 }
