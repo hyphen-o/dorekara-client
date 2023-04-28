@@ -15,5 +15,5 @@ export const styles = {
     align-items: center;
     justify-content: center;
     margin-bottom: 28px;
-  ` 
+  `,
 }

@@ -3,7 +3,6 @@ import type { FC } from 'react'
 import Avatar from '../images/Avatar'
 import { styles } from '@/styles/components/buttons/AvatarButton.style'
 
-
 const AvatarButton: FC = () => {
   return (
     <>

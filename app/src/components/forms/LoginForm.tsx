@@ -13,7 +13,7 @@ type Inputs = {
 }
 
 const LoginForm: FC = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   const {
     register,
@@ -22,24 +22,32 @@ const LoginForm: FC = () => {
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const res = await authApi.login(data);
+      const res = await authApi.login(data)
       localStorage.setItem('token', res.data.authorization.token)
       router.push('home')
     } catch (error) {
-      return error;
+      return error
     }
   }
 
   return (
     <>
       <form css={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <InputAuth submit={register} label='name'/>
-        {errors.name?.type==='required' && <Error>ユーザ名を入力してください</Error>}
-        {errors.name?.type==='minLength' && <Error>ユーザ名は4文字以上必要です</Error>}
+        <InputAuth submit={register} label='name' />
+        {errors.name?.type === 'required' && (
+          <Error>ユーザ名を入力してください</Error>
+        )}
+        {errors.name?.type === 'minLength' && (
+          <Error>ユーザ名は4文字以上必要です</Error>
+        )}
 
-        <InputAuth submit={register} label='password'/>
-        {errors.password?.type==='required' && <Error>パスワードを入力してください</Error>}
-        {errors.password?.type=='minLength' && <Error>パスワードは8文字以上必要です</Error>}
+        <InputAuth submit={register} label='password' />
+        {errors.password?.type === 'required' && (
+          <Error>パスワードを入力してください</Error>
+        )}
+        {errors.password?.type == 'minLength' && (
+          <Error>パスワードは8文字以上必要です</Error>
+        )}
 
         <SubmitButton text='ログイン' />
       </form>

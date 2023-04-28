@@ -1,5 +1,5 @@
-import {axiosClient} from "@/api/axiosClient";
+import { axiosClient } from '@/api/axiosClient'
 
 export const userApi = {
-    getImage: (id) => axiosClient(null).get(`image/${id}`),
+  getImage: (id) => axiosClient(null).get(`image/${id}`),
 }

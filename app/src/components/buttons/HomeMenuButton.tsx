@@ -8,14 +8,20 @@ type Props = {
 }
 
 const HomeMenuButton: FC<Props> = ({ text, page }) => {
-  const router = useRouter();
+  const router = useRouter()
   const changePage = (page) => {
     router.push(page)
   }
 
   return (
     <>
-      <button type='button' onClick={() => changePage(page)} css={styles.button}>{text}</button>
+      <button
+        type='button'
+        onClick={() => changePage(page)}
+        css={styles.button}
+      >
+        {text}
+      </button>
     </>
   )
 }
