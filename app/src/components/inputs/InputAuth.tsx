@@ -15,16 +15,16 @@ type InputProps = {
 }
 
 const InputAuth: FC<InputProps> = ({ submit, label, confirm }) => {
-
   return (
     <>
       <input
         css={styles.input}
-        {...submit(label, { required: true, 
-                            minLength: label==='name' ? 4 : 8, 
-                            validate:  (value): boolean => confirm && value === confirm 
-                          })}
-        type={label==='name' ? 'text' : 'password'}
+        {...submit(label, {
+          required: true,
+          minLength: label === 'name' ? 4 : 8,
+          validate: (value): boolean => confirm && value === confirm,
+        })}
+        type={label === 'name' ? 'text' : 'password'}
         placeholder={label}
       />
     </>

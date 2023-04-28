@@ -8,14 +8,16 @@ import Container from '@/components/containers/Container'
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page)
 
-  return getLayout(
+  return (
     <Provider store={store}>
-      <Global styles={globalStyle} />
-      <Container>
-        <Component {...pageProps} />
-      </Container>
+      {getLayout(
+        <Container>
+          <Global styles={globalStyle} />
+          <Component {...pageProps} />
+        </Container>,
+      )}
     </Provider>
-  )  
+  )
 }
 
 export default App
