@@ -5,7 +5,7 @@ import { createGetAppLayout } from '@/components/layouts/AppLayout'
 import { NextPageWithLayout } from '@/components/types/Layout.type'
 import { styles } from '@/styles/pages/Home.style'
 
-const home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <AvatarButton></AvatarButton>
@@ -19,6 +19,6 @@ const home: NextPageWithLayout = () => {
   )
 }
 
-home.getLayout = createGetAppLayout()
+Home.getLayout = createGetAppLayout()
 
-export default home
+export default Home
