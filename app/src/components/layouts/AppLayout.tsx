@@ -9,6 +9,7 @@ import { store } from '@/redux/store'
 import { authApi } from '@/api/routes/AuthApi'
 import { setUser } from '@/redux/slices/userSlice'
 import BackButton from '../buttons/BackButton'
+import { authUtils } from '@/utils/authUtils'
 
 type AppLayoutProps = {
   children: ReactNode
@@ -22,8 +23,8 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
   useEffect(() => {
     try {
       ;(async () => {
-        const token = localStorage.getItem('token')
-        if (!token) router.push('login')
+        const user = await authUtils.isAuthenticated()
+        if (!user) router.push('login')
         else {
           const res = await authApi.me(localStorage.getItem('token'))
           console.log(res.data.user)

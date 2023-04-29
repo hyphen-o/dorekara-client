@@ -1,12 +1,12 @@
-import { styles } from '@/styles/components/texts/LogoText.style'
-import type { FC } from 'react'
+import { styles } from '@/styles/components/texts/Title.style'
+import { FC } from 'react'
 
 type Props = {
   title: string,
 }
 
-const LogoText: FC<Props> = ({ title }) => {
-  return <div css={styles.text}>{title}</div>
+const Title: FC<Props> = ({ title }) => {
+  return <div css={styles.title}>{title}</div>
 }
 
-export default LogoText
+export default Title
