@@ -4,14 +4,30 @@ import AppLogo from '../images/AppLogo'
 import LogoText from '../texts/LogoText'
 import { FC, ReactNode, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { Provider, useDispatch } from 'react-redux'
+import { store } from '@/redux/store'
+import { authApi } from '@/api/routes/AuthApi'
+import { setUser } from '@/redux/slices/userSlice'
 
 const AppLayout: FC<LayoutProps> = ({ children, isHome }) => {
   const router = useRouter()
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    if (!token) router.push('login')
-  })
+    try {
+      ;(async () => {
+        const token = localStorage.getItem('token')
+        if (!token) router.push('login')
+        else {
+          const res = await authApi.me(localStorage.getItem('token'))
+          console.log(res.data.user)
+          dispatch(setUser(res.data.user))
+        }
+      })()
+    } catch (error) {
+      router.push('login')
+    }
+  }, [])
 
   return (
     <>
@@ -32,6 +48,10 @@ type LayoutProps = {
 
 export const createGetAppLayout = (layoutProps?: LayoutProps): GetLayout => {
   return function getLayout(page) {
-    return <AppLayout {...layoutProps}>{page}</AppLayout>
+    return (
+      <Provider store={store}>
+        <AppLayout {...layoutProps}>{page}</AppLayout>
+      </Provider>
+    )
   }
 }
