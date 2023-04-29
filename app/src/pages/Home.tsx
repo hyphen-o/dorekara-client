@@ -19,6 +19,6 @@ const Home: NextPageWithLayout = () => {
   )
 }
 
-Home.getLayout = createGetAppLayout()
+Home.getLayout = createGetAppLayout({ isHome: true })
 
 export default Home

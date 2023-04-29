@@ -8,8 +8,14 @@ import { Provider, useDispatch } from 'react-redux'
 import { store } from '@/redux/store'
 import { authApi } from '@/api/routes/AuthApi'
 import { setUser } from '@/redux/slices/userSlice'
+import BackButton from '../buttons/BackButton'
 
-const AppLayout: FC<LayoutProps> = ({ children, isHome }) => {
+type AppLayoutProps = {
+  children: ReactNode
+  isHome: boolean
+}
+
+const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -31,10 +37,10 @@ const AppLayout: FC<LayoutProps> = ({ children, isHome }) => {
 
   return (
     <>
-      <header css={styles.header}>
+      <header css={styles.header(isHome)}>
         <AppLogo />
         <LogoText />
-        {isHome}
+        {isHome ? '': <BackButton></BackButton> }
       </header>
       <main>{children}</main>
     </>
@@ -42,7 +48,6 @@ const AppLayout: FC<LayoutProps> = ({ children, isHome }) => {
 }
 
 type LayoutProps = {
-  children: ReactNode
   isHome: boolean
 }
 
