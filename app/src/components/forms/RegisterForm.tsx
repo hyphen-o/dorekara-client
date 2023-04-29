@@ -6,8 +6,6 @@ import Error from '../texts/Error'
 import InputAuth from '../inputs/InputAuth'
 import { authApi } from '@/api/routes/AuthApi'
 import { useRouter } from 'next/router'
-import { useDispatch } from 'react-redux'
-import { setUser } from '@/redux/slices/userSlice'
 
 type Inputs = {
   name: string
@@ -17,7 +15,6 @@ type Inputs = {
 
 const RegisterForm: FC = () => {
   const router = useRouter()
-  const dispatch = useDispatch()
 
   const {
     register,
@@ -30,9 +27,6 @@ const RegisterForm: FC = () => {
     try {
       const res = await authApi.register(data)
       localStorage.setItem('token', res.data.authorization.token)
-      if (res.data.user) {
-        dispatch(setUser(res.data.user))
-      }
       console.log(res)
       router.push('home')
     } catch (error) {

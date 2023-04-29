@@ -1,21 +1,14 @@
-import { authApi } from '@/api/routes/AuthApi'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { FC, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 type Props = {}
 
 const Avatar: FC<Props> = () => {
-  const router = useRouter()
+  const user = useSelector((state) => state.user.user)
   useEffect(() => {
     ;(async () => {
-      try {
-        const res = await authApi.me(localStorage.getItem('token'))
-        console.log(res.data.user)
-      } catch (error) {
-        localStorage.removeItem('token')
-        router.push('login')
-      }
+      console.log(user)
     })()
   }, [])
 
@@ -27,6 +20,7 @@ const Avatar: FC<Props> = () => {
         width={60}
         height={60}
       ></Image>
+      <h1>{user.name}</h1>
     </>
   )
 }

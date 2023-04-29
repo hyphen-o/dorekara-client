@@ -5,9 +5,15 @@ type User = {
   name: string | null
 }
 
-const initialState: User = {
-  id: null,
-  name: null,
+type UserState = {
+  user: User
+}
+
+const initialState: UserState = {
+  user: {
+    id: null,
+    name: null,
+  },
 }
 
 export const userSlice = createSlice({
@@ -15,7 +21,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action: PayloadAction<User>) => {
-      state = action.payload
+      state.user = action.payload
     },
   },
 })
