@@ -1,4 +1,3 @@
-import { styles } from '@/styles/components/buttons/BackButton.style'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import type { FC } from 'react'
