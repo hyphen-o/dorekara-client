@@ -8,9 +8,9 @@ import { styles } from '@/styles/pages/Home.style'
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <AvatarButton></AvatarButton>
-      <SingButton></SingButton>
       <div css={styles.wrapper}>
+        <AvatarButton></AvatarButton>
+        <SingButton></SingButton>
         <HomeMenuButton text='曲一覧' page='songs'></HomeMenuButton>
         <HomeMenuButton text='アーティスト一覧' page='artists'></HomeMenuButton>
         <HomeMenuButton text='カラオケ履歴' page='histories'></HomeMenuButton>

@@ -1,5 +1,6 @@
 
 import { songApi } from '@/api/routes/SongApi'
+import CreateButton from '@/components/buttons/CreateButton'
 import SquareButton from '@/components/buttons/SquareButton'
 import { createGetAppLayout } from '@/components/layouts/AppLayout'
 import Title from '@/components/texts/Title'
@@ -37,11 +38,12 @@ const Index: NextPageWithLayout = () => {
           songs.map((song) => {
             return (
               <>
-                <SquareButton text={song.name} song_key={song.key} ></SquareButton>
+                <SquareButton id={song.id} text={song.name} song_key={song.key} isEditable={true}></SquareButton>
               </>
             )
           })
         }
+        <CreateButton></CreateButton>
       </div>
     </>
   )
