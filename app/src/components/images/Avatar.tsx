@@ -20,7 +20,6 @@ const Avatar: FC<Props> = () => {
         width={60}
         height={60}
       ></Image>
-      <h1>{user.name}</h1>
     </>
   )
 }
