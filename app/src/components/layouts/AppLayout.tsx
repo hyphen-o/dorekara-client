@@ -8,16 +8,23 @@ import { Provider, useDispatch } from 'react-redux'
 import { store } from '@/redux/store'
 import { authApi } from '@/api/routes/AuthApi'
 import { setUser } from '@/redux/slices/userSlice'
+import BackButton from '../buttons/BackButton'
+import { authUtils } from '@/utils/authUtils'
 
-const AppLayout: FC<LayoutProps> = ({ children, isHome }) => {
+type AppLayoutProps = {
+  children: ReactNode
+  isHome: boolean
+}
+
+const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
   const router = useRouter()
   const dispatch = useDispatch()
 
   useEffect(() => {
     try {
       ;(async () => {
-        const token = localStorage.getItem('token')
-        if (!token) router.push('login')
+        const user = await authUtils.isAuthenticated()
+        if (!user) router.push('login')
         else {
           const res = await authApi.me(localStorage.getItem('token'))
           console.log(res.data.user)
@@ -31,10 +38,10 @@ const AppLayout: FC<LayoutProps> = ({ children, isHome }) => {
 
   return (
     <>
-      <header css={styles.header}>
+      <header css={styles.header(isHome)}>
         <AppLogo />
         <LogoText />
-        {isHome}
+        {!isHome && <BackButton></BackButton>}
       </header>
       <main>{children}</main>
     </>
@@ -42,7 +49,6 @@ const AppLayout: FC<LayoutProps> = ({ children, isHome }) => {
 }
 
 type LayoutProps = {
-  children: ReactNode
   isHome: boolean
 }
 
