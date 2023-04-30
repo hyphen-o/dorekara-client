@@ -3,6 +3,8 @@ import { css } from '@emotion/react'
 
 export const styles = {
   header: (isHome) => css`
+    position: ${isHome ? '' : 'fixed'};
+    width: 100%;
     background-color: ${color.red};
     height: ${isHome ? '254px' : '215px'};
     padding-top: 25px;
