@@ -1,18 +1,18 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type Song = {
-  id: number | null,
-  name: string | null,
-  artist_id: number | null,
-  key: number | null,
+  id: number | null
+  name: string | null
+  artist_id: number | null
+  key: number | null
 }
 
 type SongState = {
-    song: Song[],
+  song: Song[]
 }
 
 const initialState: SongState = {
-    song: []
+  song: [],
 }
 
 export const songSlice = createSlice({

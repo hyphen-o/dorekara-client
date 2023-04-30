@@ -3,11 +3,11 @@ import { useRouter } from 'next/router'
 import type { FC } from 'react'
 
 const BackButton: FC = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <>
-      <div onClick={router.back} >
+      <div onClick={router.back}>
         <Image
           src='/images/icons/backIcon.png'
           alt='backbutton'

@@ -41,7 +41,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
       <header css={styles.header(isHome)}>
         <AppLogo />
         <LogoText />
-        {!isHome &&<BackButton></BackButton> }
+        {!isHome && <BackButton></BackButton>}
       </header>
       <main>{children}</main>
     </>
