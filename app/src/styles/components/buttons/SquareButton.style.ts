@@ -32,5 +32,5 @@ export const styles = {
     display: flex;
     padding: 0 5px;
     align-items: center;
-  `
+  `,
 }

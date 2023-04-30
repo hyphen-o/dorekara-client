@@ -7,7 +7,11 @@ const CreateButton: FC = () => {
 
   return (
     <>
-      <button css={styles.button} type='button' onClick={() => router.push('songs/create')}>
+      <button
+        css={styles.button}
+        type='button'
+        onClick={() => router.push('songs/create')}
+      >
         <div css={styles.wrapper}>
           <div>曲を追加する</div>
           <div>+</div>

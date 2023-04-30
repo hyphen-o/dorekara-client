@@ -2,7 +2,7 @@ import { styles } from '@/styles/components/texts/Title.style'
 import { FC } from 'react'
 
 type Props = {
-  title: string,
+  title: string
 }
 
 const Title: FC<Props> = ({ title }) => {

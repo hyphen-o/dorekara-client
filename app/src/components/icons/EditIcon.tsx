@@ -6,7 +6,7 @@ type Props = {
   id: number
 }
 
-const EditIcon: FC<Props> = ({id}) => {
+const EditIcon: FC<Props> = ({ id }) => {
   const router = useRouter()
 
   const handleTrashIconClick = () => {
@@ -16,7 +16,12 @@ const EditIcon: FC<Props> = ({id}) => {
   return (
     <>
       <div onClick={handleTrashIconClick}>
-          <Image src='/images/icons/pencil.png' alt='edit' width={28} height={28}></Image>
+        <Image
+          src='/images/icons/pencil.png'
+          alt='edit'
+          width={28}
+          height={28}
+        ></Image>
       </div>
     </>
   )

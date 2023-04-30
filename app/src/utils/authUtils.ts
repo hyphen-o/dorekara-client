@@ -1,12 +1,12 @@
-import { authApi } from "@/api/routes/AuthApi"
+import { authApi } from '@/api/routes/AuthApi'
 
 export const authUtils = {
   isAuthenticated: async () => {
-    if(localStorage.getItem('token')) {
+    if (localStorage.getItem('token')) {
       const res = await authApi.me(localStorage.getItem('token'))
-      if(res.data.user) return res.data.user
+      if (res.data.user) return res.data.user
     }
-  
+
     return false
-  }
+  },
 }

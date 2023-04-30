@@ -12,11 +12,11 @@ type Props = {
   page?: string
 }
 
-const SquareButton: FC<Props> = ({ id, text, song_key, isEditable, page}) => {
+const SquareButton: FC<Props> = ({ id, text, song_key, isEditable, page }) => {
   const router = useRouter()
 
   const changePage = (page) => {
-    if(page) {
+    if (page) {
       router.push(page)
     }
   }
@@ -29,16 +29,12 @@ const SquareButton: FC<Props> = ({ id, text, song_key, isEditable, page}) => {
         css={styles.button}
       >
         <div css={styles.text_wrapper}>
-          <div>
-            {text}
-          </div>
-          <div css={styles.key}>
-            {song_key ? song_key : ''}     
-          </div>
+          <div>{text}</div>
+          <div css={styles.key}>{song_key ? song_key : ''}</div>
         </div>
         <div css={styles.icons_wrapper}>
-          {isEditable && <EditIcon id={id}/>}
-          <TrashIcon id={id}/>
+          {isEditable && <EditIcon id={id} />}
+          <TrashIcon id={id} />
         </div>
       </button>
     </>
