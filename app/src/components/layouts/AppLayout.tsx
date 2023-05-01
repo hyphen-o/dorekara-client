@@ -24,7 +24,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
     try {
       ;(async () => {
         const user = await authUtils.isAuthenticated()
-        if (!user) router.push('login')
+        if (!user) router.push('/login')
         else {
           const res = await authApi.me(localStorage.getItem('token'))
           console.log(res.data.user)
@@ -32,7 +32,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
         }
       })()
     } catch (error) {
-      router.push('login')
+      router.push('/login')
     }
   }, [])
 
