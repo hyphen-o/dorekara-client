@@ -1,3 +1,4 @@
+import { UserState } from '@/redux/types/userSlice.type'
 import Image from 'next/image'
 import { FC, useEffect } from 'react'
 import { useSelector } from 'react-redux'
@@ -5,7 +6,7 @@ import { useSelector } from 'react-redux'
 type Props = {}
 
 const Avatar: FC<Props> = () => {
-  const user = useSelector((state) => state.user.user)
+  const user = useSelector((state: UserState) => state.user.value)
   useEffect(() => {
     ;(async () => {
       console.log(user)
