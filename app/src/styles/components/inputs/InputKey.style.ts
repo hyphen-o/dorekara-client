@@ -11,7 +11,7 @@ export const styles = {
     color: ${color.darkgray};
     padding: 0 20px;
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 14px;
   `
 }

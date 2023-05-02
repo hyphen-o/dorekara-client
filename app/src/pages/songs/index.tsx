@@ -5,6 +5,7 @@ import { createGetAppLayout } from '@/components/layouts/AppLayout'
 import Title from '@/components/texts/PageTitle'
 import { NextPageWithLayout } from '@/components/types/Layout.type'
 import { setSong } from '@/redux/slices/songSlice'
+import { SongState } from '@/redux/types/songSlice.type'
 import { styles } from '@/styles/pages/Songs.style'
 import { authUtils } from '@/utils/authUtils'
 import { useRouter } from 'next/router'
@@ -13,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Index: NextPageWithLayout = () => {
   const router = useRouter()
-  const songs = useSelector((state) => state.song.song)
+  const songs = useSelector((state: SongState) => state.song.value)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const Index: NextPageWithLayout = () => {
                 id={song.id}
                 text={song.name}
                 song_key={song.key}
-                isEditable={true}
+                isEditable
               ></SquareButton>
             </>
           )

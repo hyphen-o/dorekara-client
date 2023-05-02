@@ -1,29 +1,33 @@
 import { styles } from '@/styles/components/inputs/InputSong.style'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Path, UseFormRegister } from 'react-hook-form'
-
-type FormValues = {
-  title: string
-  key: number
-}
+import { SongFormValues } from '../types/SongForm.type'
 
 type InputProps = {
-  submit: UseFormRegister<FormValues>
-  label: Path<FormValues>
+  submit: UseFormRegister<SongFormValues>
+  label: Path<SongFormValues>
+  value?: string
 }
 
-const InputSong: FC<InputProps> = ({ submit, label }) => {
+const InputSong: FC<InputProps> = ({ submit, label, value}) => {
+  const [text, setText] = useState<string>(value)
+
+  useEffect(() => {
+    setText(value)
+  }, [value])
+
   return (
     <>
       <input
         css={styles.input}
         {...submit(label, {
           required: true,
-          minLength: label === 'title' ? 1 : 0,
           maxLength: 8,
         })}
         type='text'
         placeholder={label}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       />
     </>
   )
