@@ -14,7 +14,7 @@ const TrashIcon: FC<Props> = ({ id }) => {
   const router = useRouter()
 
   const handleTrashIconClick = () => {
-    ( async () => {
+    ;(async () => {
       await songApi.destroy({ song_id: id, user_id: user.id })
       router.reload()
     })()

@@ -13,5 +13,5 @@ export const styles = {
     display: flex;
     margin-bottom: 20px;
     font-size: 14px;
-  `
+  `,
 }

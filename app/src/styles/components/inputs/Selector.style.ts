@@ -14,5 +14,5 @@ export const styles = {
     text-align: center;
     margin: 8px auto;
     font-size: 14px;
-  `
+  `,
 }
