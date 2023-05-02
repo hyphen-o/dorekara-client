@@ -1,4 +1,3 @@
-
 export type Artist = {
   id: number | null
   name: string | null

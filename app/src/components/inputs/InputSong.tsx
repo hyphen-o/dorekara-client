@@ -9,7 +9,7 @@ type InputProps = {
   value?: string
 }
 
-const InputSong: FC<InputProps> = ({ submit, label, value}) => {
+const InputSong: FC<InputProps> = ({ submit, label, value }) => {
   const [text, setText] = useState<string>(value)
 
   useEffect(() => {

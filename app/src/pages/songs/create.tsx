@@ -5,7 +5,6 @@ import { NextPageWithLayout } from '@/components/types/Layout.type'
 import { styles } from '@/styles/pages/Create.style'
 
 const Create: NextPageWithLayout = () => {
-
   return (
     <>
       <div css={styles.wrapper}>
