@@ -1,6 +1,6 @@
 import { styles } from '@/styles/components/inputs/InputKey.style'
 import { FC, useEffect, useState } from 'react'
-import { SongFormValues } from '../types/SongForm.type'
+import { SongFormValues } from '../types/Form.type'
 import { UseFormRegister } from 'react-hook-form'
 
 type Props = {
