@@ -1,21 +1,14 @@
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import type { FC } from 'react'
 
 type Props = {
-  id: number
+  onIconClick: () => void
 }
 
-const EditIcon: FC<Props> = ({ id }) => {
-  const router = useRouter()
-
-  const handleTrashIconClick = () => {
-    router.push(`songs/${id}/edit`)
-  }
-
+const EditIcon: FC<Props> = ({ onIconClick }) => {
   return (
     <>
-      <div onClick={handleTrashIconClick}>
+      <div onClick={onIconClick}>
         <Image
           src='/images/icons/pencil.png'
           alt='edit'

@@ -11,7 +11,7 @@ export const styles = {
     color: ${color.darkgray};
     padding: 0 20px;
     display: flex;
-    margin: 8px auto;
+    margin: 8px 0px;
     font-size: 14px;
     ::placeholder {
       color: ${color.placeholder};

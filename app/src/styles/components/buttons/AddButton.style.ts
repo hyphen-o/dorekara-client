@@ -5,18 +5,11 @@ export const styles = {
   button: css`
     border-radius: 5px;
     height: 43px;
-    width: 300px;
-    font-size: 18px;
-    border: solid 2px ${color.white};
+    width: 43px;
+    font-size: 20px;
+    border: none;
     color: ${color.white};
     background-color: ${color.red};
-    margin-bottom: 15px;
-  `,
-
-  wrapper: css`
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding: 0 5px;
+    text-align: center;
   `,
 }

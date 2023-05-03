@@ -7,7 +7,7 @@ import InputSong from '../inputs/InputSong'
 import Selector from '../inputs/Selector'
 import InputKey from '../inputs/InputKey'
 import Error from '../texts/Error'
-import { SongFormValues } from '../types/SongForm.type'
+import { SongFormValues } from '../types/Form.type'
 import { songApi } from '@/api/routes/SongApi'
 import { useSelector } from 'react-redux'
 import { UserState } from '@/redux/types/userSlice.type'
@@ -44,10 +44,10 @@ const SongForm: FC<Props> = ({ id }) => {
       ;(async () => {
         const res = await songApi.getOne(id)
         setSong(res.data[0])
+        setValue('name', res.data[0].name)
+        setValue('artist_id', res.data[0].artist_id)
+        setValue('key', res.data[0].key)
       })()
-      setValue('name', song.name)
-      setValue('artist_id', song.artist_id)
-      setValue('key', song.key)
     }
   }, [])
 
@@ -59,6 +59,7 @@ const SongForm: FC<Props> = ({ id }) => {
       } else {
         songApi.create(user.id, data)
       }
+      console.log(data)
       router.back()
     } catch (error) {
       return error
