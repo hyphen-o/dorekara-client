@@ -1,18 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { Song, SongValue } from '../types/songSlice.type'
 
-type Song = {
-  id: number | null
-  name: string | null
-  artist_id: number | null
-  key: number | null
-}
-
-type SongState = {
-  song: Song[]
-}
-
-const initialState: SongState = {
-  song: [],
+const initialState: SongValue = {
+  value: [],
 }
 
 export const songSlice = createSlice({
@@ -20,7 +10,7 @@ export const songSlice = createSlice({
   initialState,
   reducers: {
     setSong: (state, action: PayloadAction<Song[]>) => {
-      state.song = action.payload
+      state.value = action.payload
     },
   },
 })
