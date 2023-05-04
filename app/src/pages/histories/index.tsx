@@ -33,7 +33,7 @@ const Index: NextPageWithLayout = () => {
         {dates.map((date) => {
           return (
             <>
-              <DatesButton date={date.date}/>
+              <DatesButton date={date.date} />
             </>
           )
         })}

@@ -8,8 +8,12 @@ type Props = {
   onButtonClick?: () => void
 }
 
-const SquareButton: FC<Props> = ({ text, song_key, children, onButtonClick}) => {
-
+const SquareButton: FC<Props> = ({
+  text,
+  song_key,
+  children,
+  onButtonClick,
+}) => {
   return (
     <>
       <button type='button' onClick={onButtonClick} css={styles.button}>

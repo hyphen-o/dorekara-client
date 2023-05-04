@@ -11,7 +11,6 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-
 const Songs: NextPageWithLayout = () => {
   const router = useRouter()
   const title = String(router.query.date)
@@ -23,25 +22,23 @@ const Songs: NextPageWithLayout = () => {
     ;(async () => {
       const user = await authUtils.isAuthenticated()
       if (!user) router.push('login')
-      const res = await historyApi.getSongs(user.id, {date: title})
+      const res = await historyApi.getSongs(user.id, { date: title })
       console.log(res.data)
       dispatch(setSong(res.data[0]))
     })()
-  },[])
+  }, [])
 
   return (
     <>
       <div css={styles.wrapper}>
-        <Title title={title} ></Title>
-        {
-          songs.map((song) => {
-            return (
-              <>
-                <HistoriesButton song={song}></HistoriesButton>
-              </>
-            )
-          })
-        }
+        <Title title={title}></Title>
+        {songs.map((song) => {
+          return (
+            <>
+              <HistoriesButton song={song}></HistoriesButton>
+            </>
+          )
+        })}
       </div>
     </>
   )
