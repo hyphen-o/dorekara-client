@@ -4,15 +4,19 @@ import { FC, ReactNode } from 'react'
 type Props = {
   text: string
   song_key?: number
-  children: ReactNode
+  children?: ReactNode
+  onButtonClick?: () => void
 }
 
-const SquareButton: FC<Props> = ({ text, song_key, children }) => {
-  const changePage = () => {}
-
+const SquareButton: FC<Props> = ({
+  text,
+  song_key,
+  children,
+  onButtonClick,
+}) => {
   return (
     <>
-      <button type='button' onClick={() => changePage()} css={styles.button}>
+      <button type='button' onClick={onButtonClick} css={styles.button}>
         <div css={styles.text_wrapper}>
           <div>{text}</div>
           <div css={styles.key}>{song_key ? song_key : ''}</div>
