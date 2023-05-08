@@ -10,7 +10,9 @@ type Props = {
 const RoundButton: FC<Props> = ({ theme, text, handleButtonClick }) => {
   return (
     <>
-      <button css={styles.button({ theme })} onClick={handleButtonClick}>{text}</button>
+      <button css={styles.button({ theme })} onClick={handleButtonClick}>
+        {text}
+      </button>
     </>
   )
 }

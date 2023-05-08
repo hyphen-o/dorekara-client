@@ -7,5 +7,5 @@ export const styles = {
     font-size: 50px;
     text-align: center;
     color: ${color.red};
-  `
+  `,
 }
