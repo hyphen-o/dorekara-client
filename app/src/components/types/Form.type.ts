@@ -7,3 +7,7 @@ export type SongFormValues = {
 export type ArtistFormValues = {
   name: string
 }
+
+export type KaraokeFormValues = {
+  artist_id: number
+}

@@ -1,12 +1,15 @@
 import { styles } from '@/styles/components/buttons/SingButton.style'
 import Image from 'next/image'
-import Link from 'next/link'
 import type { FC } from 'react'
 
 const SingButton: FC = () => {
+  const handleSingButtonClick = () => {
+    ;(async () => {})()
+  }
+
   return (
     <>
-      <Link href='karaoke'>
+      <div onClick={handleSingButtonClick}>
         <Image
           src='/images/icons/singButton.png'
           alt='singbutton'
@@ -14,7 +17,7 @@ const SingButton: FC = () => {
           height={164}
           css={styles.button}
         />
-      </Link>
+      </div>
     </>
   )
 }
