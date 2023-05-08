@@ -14,7 +14,7 @@ const SingButton: FC = () => {
     ;(async () => {
       //ユーザの持つ曲を全て取得
       const res = await songApi.getAll(user.id)
-      if(res.data) {
+      if (res.data) {
         //曲をローカルに保持
         localStorage.setItem('songs', JSON.stringify(res.data))
         router.push('karaoke')

@@ -19,5 +19,5 @@ export const styles = {
   key: css`
     text-align: center;
     color: ${color.red};
-  `
+  `,
 }

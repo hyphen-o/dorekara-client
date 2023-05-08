@@ -32,7 +32,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
           dispatch(setUser(res.data.user))
         }
         //ユーザがカラオケ中であればカラオケ画面にリダイレクト
-        if(localStorage.getItem('songs')) {
+        if (localStorage.getItem('songs')) {
           router.push('karaoke')
         }
       })()
