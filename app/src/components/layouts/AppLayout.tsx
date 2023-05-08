@@ -23,12 +23,17 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
   useEffect(() => {
     try {
       ;(async () => {
+        //ユーザがログイン状態か確認
         const user = await authUtils.isAuthenticated()
         if (!user) router.push('/login')
         else {
           const res = await authApi.me(localStorage.getItem('token'))
           console.log(res.data.user)
           dispatch(setUser(res.data.user))
+        }
+        //ユーザがカラオケ中であればカラオケ画面にリダイレクト
+        if(localStorage.getItem('songs')) {
+          router.push('karaoke')
         }
       })()
     } catch (error) {
