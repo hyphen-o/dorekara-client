@@ -14,5 +14,5 @@ export const styles = {
         opacity: 1;
       }
     }
-  `
+  `,
 }

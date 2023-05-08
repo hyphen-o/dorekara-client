@@ -3,25 +3,21 @@ import Image from 'next/image'
 import type { FC } from 'react'
 
 const SingButton: FC = () => {
-
   const handleSingButtonClick = () => {
-    (async () => {
-      
-    })()
+    ;(async () => {})()
   }
 
-  
   return (
     <>
-        <div onClick={handleSingButtonClick}>
-          <Image
-            src='/images/icons/singButton.png'
-            alt='singbutton'
-            width={164}
-            height={164}
-            css={styles.button}
-            />
-        </div>
+      <div onClick={handleSingButtonClick}>
+        <Image
+          src='/images/icons/singButton.png'
+          alt='singbutton'
+          width={164}
+          height={164}
+          css={styles.button}
+        />
+      </div>
     </>
   )
 }

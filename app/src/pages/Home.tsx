@@ -6,7 +6,6 @@ import { NextPageWithLayout } from '@/components/types/Layout.type'
 import { styles } from '@/styles/pages/Home.style'
 
 const Home: NextPageWithLayout = () => {
-
   return (
     <>
       <div css={styles.wrapper}>

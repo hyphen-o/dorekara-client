@@ -9,21 +9,19 @@ import { styles } from '@/styles/components/forms/KaraokeForm.style'
 const KaraokeForm: FC = () => {
   const [isOpen, SetIsOpen] = useState<boolean>(false)
 
-  const {
-    register,
-    handleSubmit,
-  } = useForm<KaraokeFormValues>()
+  const { register, handleSubmit } = useForm<KaraokeFormValues>()
 
   const onSubmit: SubmitHandler<KaraokeFormValues> = async (data) => {
     try {
+      console.log(data);
+      
       SetIsOpen(true)
     } catch (error) {
       return error
     }
   }
 
-  const handleRoundButtonClick = () => {
-  }
+  const handleRoundButtonClick = () => {}
 
   return (
     <>
@@ -32,14 +30,30 @@ const KaraokeForm: FC = () => {
           {
             //hard
             !isOpen ? 'TAP!' : '曲名'
-          }    
+          }
         </div>
-        <Dorekana isOpen={isOpen} ></Dorekana>
-        { !isOpen && <Selector submit={register} text='次に歌う曲のアーティスト'></Selector>}
+        <Dorekana isOpen={isOpen}></Dorekana>
+        {!isOpen && (
+          <Selector
+            submit={register}
+            text='次に歌う曲のアーティスト'
+          ></Selector>
+        )}
       </form>
-      { !isOpen && <RoundButton theme='red' text='カラオケ終了！' handleButtonClick={handleRoundButtonClick}></RoundButton>}
-      { isOpen && <RoundButton theme='red' text='次の曲！' handleButtonClick={() => SetIsOpen(false)}></RoundButton>}
-
+      {!isOpen && (
+        <RoundButton
+          theme='red'
+          text='カラオケ終了！'
+          handleButtonClick={handleRoundButtonClick}
+        ></RoundButton>
+      )}
+      {isOpen && (
+        <RoundButton
+          theme='red'
+          text='次の曲！'
+          handleButtonClick={() => SetIsOpen(false)}
+        ></RoundButton>
+      )}
     </>
   )
 }

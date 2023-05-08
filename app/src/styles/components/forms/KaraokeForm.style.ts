@@ -1,6 +1,5 @@
-import { color } from "@/styles/theme";
-import { css } from "@emotion/react";
-
+import { color } from '@/styles/theme'
+import { css } from '@emotion/react'
 
 export const styles = {
   text: css`
@@ -11,5 +10,5 @@ export const styles = {
   form: css`
     margin-top: 100px;
     margin-bottom: 50px;
-  `
+  `,
 }
