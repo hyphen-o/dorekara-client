@@ -10,6 +10,7 @@ import { useRouter } from 'next/router'
 import { historyApi } from '@/api/routes/HistoriesApi'
 import { useSelector } from 'react-redux'
 import { UserState } from '@/redux/types/userSlice.type'
+import { artistApi } from '@/api/routes/ArtistApi'
 
 const KaraokeForm: FC = () => {
   const router = useRouter()
@@ -21,6 +22,7 @@ const KaraokeForm: FC = () => {
     artist_id: null,
     key: null
   })
+  const [artist, setArtist] = useState<string>()
 
   const { register, handleSubmit } = useForm<KaraokeFormValues>()
 
@@ -58,6 +60,16 @@ const KaraokeForm: FC = () => {
       const random_song = filtered_songs[random_index]
       setSong(random_song)
 
+      //アーティスト名を取得する
+      if(random_song.artist_id) {
+        const res = await artistApi.getOne(random_song.artist_id)
+        console.log(res.data);
+        
+        setArtist(res.data[0].name)
+      } else {
+        setArtist('アーティスト設定なし')
+      }
+
       //カラオケ履歴に曲を追加
       await historyApi.create(user.id, {song_id: random_song.id})
 
@@ -84,9 +96,14 @@ const KaraokeForm: FC = () => {
             isOpen ? song.name : 'TAP!'
           }
         </div>
-        <div>
+        <div css={styles.artist}>
           {
-            isOpen && song.artist_id
+            isOpen && artist
+          }
+        </div>
+        <div css={styles.key}>
+          {
+            isOpen && song.key && song.key
           }
         </div>
         <Dorekana isOpen={isOpen}></Dorekana>
