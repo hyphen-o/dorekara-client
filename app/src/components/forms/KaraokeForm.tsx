@@ -20,7 +20,7 @@ const KaraokeForm: FC = () => {
     id: null,
     name: null,
     artist_id: null,
-    key: null
+    key: null,
   })
   const [artist, setArtist] = useState<string>()
 
@@ -36,21 +36,21 @@ const KaraokeForm: FC = () => {
       //ローカルストレージに存在する曲を取得する
       const songs = JSON.parse(localStorage.getItem('songs'))[0]
       //アーティストに指定があれば曲をフィルタリングする
-      const filtered_songs = songs.filter(song => {
-        if(data.artist_id) return song.artist_id == data.artist_id
+      const filtered_songs = songs.filter((song) => {
+        if (data.artist_id) return song.artist_id == data.artist_id
         else return song
       })
 
       //曲がこれ以上ない場合にアラートを出す
-      if(!songs.length) {
+      if (!songs.length) {
         alert('曲がもうありません！カラオケを終了します.')
         deleteLocalSongs()
         router.push('home')
         return
       }
-      
+
       //条件に合う曲がこれ以上ない場合にアラートを出す
-      if(!filtered_songs.length) {
+      if (!filtered_songs.length) {
         alert('条件に合う曲がもうありません！')
         return
       }
@@ -61,17 +61,17 @@ const KaraokeForm: FC = () => {
       setSong(random_song)
 
       //アーティスト名を取得する
-      if(random_song.artist_id) {
+      if (random_song.artist_id) {
         const res = await artistApi.getOne(random_song.artist_id)
-        console.log(res.data);
-        
+        console.log(res.data)
+
         setArtist(res.data[0].name)
       } else {
         setArtist('アーティスト設定なし')
       }
 
       //カラオケ履歴に曲を追加
-      await historyApi.create(user.id, {song_id: random_song.id})
+      await historyApi.create(user.id, { song_id: random_song.id })
 
       //ローカルの曲からランダムに選んだ曲を取り除く
       const new_songs = songs.filter((song) => song.id != random_song.id)
@@ -91,21 +91,9 @@ const KaraokeForm: FC = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} css={styles.form}>
-        <div css={styles.text}>
-          {
-            isOpen ? song.name : 'TAP!'
-          }
-        </div>
-        <div css={styles.artist}>
-          {
-            isOpen && artist
-          }
-        </div>
-        <div css={styles.key}>
-          {
-            isOpen && song.key && song.key
-          }
-        </div>
+        <div css={styles.text}>{isOpen ? song.name : 'TAP!'}</div>
+        <div css={styles.artist}>{isOpen && artist}</div>
+        <div css={styles.key}>{isOpen && song.key && song.key}</div>
         <Dorekana isOpen={isOpen}></Dorekana>
         {!isOpen && (
           <Selector
