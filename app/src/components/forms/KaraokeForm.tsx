@@ -7,9 +7,13 @@ import RoundButton from '../buttons/roundbuttons/RoundButton'
 import { styles } from '@/styles/components/forms/KaraokeForm.style'
 import { Song } from '@/redux/types/songSlice.type'
 import { useRouter } from 'next/router'
+import { historyApi } from '@/api/routes/HistoriesApi'
+import { useSelector } from 'react-redux'
+import { UserState } from '@/redux/types/userSlice.type'
 
 const KaraokeForm: FC = () => {
   const router = useRouter()
+  const user = useSelector((state: UserState) => state.user.value)
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [song, setSong] = useState<Song>({
     id: null,
@@ -53,6 +57,9 @@ const KaraokeForm: FC = () => {
       const random_index = Math.floor(Math.random() * filtered_songs.length)
       const random_song = filtered_songs[random_index]
       setSong(random_song)
+
+      //カラオケ履歴に曲を追加
+      await historyApi.create(user.id, {song_id: random_song.id})
 
       //ローカルの曲からランダムに選んだ曲を取り除く
       const new_songs = songs.filter((song) => song.id != random_song.id)
