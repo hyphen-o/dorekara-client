@@ -13,8 +13,8 @@ const KaraokeForm: FC = () => {
 
   const onSubmit: SubmitHandler<KaraokeFormValues> = async (data) => {
     try {
-      console.log(data);
-      
+      console.log(data)
+
       SetIsOpen(true)
     } catch (error) {
       return error
