@@ -5,11 +5,11 @@ import { authUtils } from '@/utils/authUtils'
 import { FC, useEffect, useState } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import { SongFormValues } from '../types/Form.type'
+import { KaraokeFormValues, SongFormValues } from '../types/Form.type'
 import { ArtistState } from '@/redux/types/artistSlice.type'
 
 type Props = {
-  submit: UseFormRegister<SongFormValues>
+  submit: UseFormRegister<SongFormValues | KaraokeFormValues>
   text: string
   value?: number
 }
