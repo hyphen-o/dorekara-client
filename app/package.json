@@ -3,6 +3,8 @@
   "packageManager": "yarn@3.4.1",
   "scripts": {
     "dev": "next dev",
+    "start": "next start",
+    "build": "next build && next export",
     "lint": "next lint -d ./ --ignore-path .gitignore",
     "format": "prettier --write .",
     "check": "yarn lint && prettier --check ."
