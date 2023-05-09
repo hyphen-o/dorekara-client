@@ -11,4 +11,13 @@ export const styles = {
     margin-top: 100px;
     margin-bottom: 50px;
   `,
+  artist: css`
+    text-align: center;
+    font-size: 20px;
+    color: ${color.red};
+  `,
+  key: css`
+    text-align: center;
+    color: ${color.red};
+  `,
 }
