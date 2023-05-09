@@ -79,7 +79,7 @@ const KaraokeForm: FC = () => {
 
       setIsOpen(true)
     } catch (error) {
-      return error
+      alert('選曲できませんでした')
     }
   }
 

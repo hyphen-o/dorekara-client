@@ -10,20 +10,18 @@ const SingButton: FC = () => {
   const router = useRouter()
   const user = useSelector((state: UserState) => state.user.value)
 
-  const handleSingButtonClick = () => {
-    ;(async () => {
-      //ユーザの持つ曲を全て取得
-      const res = await songApi.getAll(user.id)
-      if (res.data) {
-        //曲をローカルに保持
-        localStorage.setItem('songs', JSON.stringify(res.data))
-        router.push('karaoke')
-      } else {
-        //曲が存在しなければページ遷移しない
-        alert('曲をまず作成しましょう！')
-        return
-      }
-    })()
+  const handleSingButtonClick = async () => {
+    //ユーザの持つ曲を全て取得
+    const res = await songApi.getAll(user.id)
+    if (res.data) {
+      //曲をローカルに保持
+      localStorage.setItem('songs', JSON.stringify(res.data))
+      router.push('karaoke')
+    } else {
+      //曲が存在しなければページ遷移しない
+      alert('曲をまず作成しましょう！')
+      return
+    }
   }
 
   return (
