@@ -1,26 +1,41 @@
-import { UserState } from '@/redux/types/userSlice.type'
-import Image from 'next/image'
-import { FC, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { styles } from '@/styles/components/images/Avatar.style'
+import { authUtils } from '@/utils/authUtils'
+import { FC, useEffect, useState } from 'react'
 
-type Props = {}
+const Avatar: FC = () => {
+  const [loading, setLoading] = useState<boolean>(false)
+  const [imgUrl, setImgUrl] = useState<string>('')
+  const [name, setName] = useState<string>('')
 
-const Avatar: FC<Props> = () => {
-  const user = useSelector((state: UserState) => state.user.value)
   useEffect(() => {
     ;(async () => {
-      console.log(user)
+      try {
+        setLoading(true)
+        const user = await authUtils.isAuthenticated()
+        setImgUrl(user.image_url)
+        setName(user.name)
+        setLoading(false)      
+      } catch(e) {        
+        setLoading(false)
+      }
     })()
   }, [])
 
   return (
     <>
-      <Image
-        src='/images/icons/usericon.png'
-        alt='avatar'
-        width={60}
-        height={60}
-      ></Image>
+      <div css={styles.wrapper}>
+        {
+          !loading && 
+          <img
+          src={imgUrl === 'default_url.png' ? `/images/icons/usericon.png` : imgUrl}
+          alt='avatar'
+          width={60}
+          height={60}
+          css={styles.image}
+          />
+        }
+        <div css={styles.name}>{name}</div>
+      </div>
     </>
   )
 }
