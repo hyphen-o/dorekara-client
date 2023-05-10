@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-export const axiosClient = (token) =>
+export const axiosClient = (token, contentType = 'application/json') =>
   axios.create({
     baseURL: 'http://localhost/api/',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': contentType,
       'Access-Control-Allow-Origin': '*',
       Authorization: `Bearer ${token}`,
     },
