@@ -18,10 +18,10 @@ const Config: NextPageWithLayout = () => {
   }
 
   const handleUserDelete = async () => {
-    const confirm = window.confirm("本当に削除しますか？")
-    if(confirm) {
+    const confirm = window.confirm('本当に削除しますか？')
+    if (confirm) {
       localStorage.removeItem('token')
-      await authApi.destroy({user_id: user.id})
+      await authApi.destroy({ user_id: user.id })
       router.push('/login')
     }
   }
@@ -32,10 +32,19 @@ const Config: NextPageWithLayout = () => {
         <Title title='ユーザ設定' />
         <InputFile />
         <div css={styles.button}>
-          <RoundButton theme='white' text="サインアウト" handleButtonClick={handleSignOut}/>
+          <RoundButton
+            theme='white'
+            text='サインアウト'
+            handleButtonClick={handleSignOut}
+          />
         </div>
         <div css={styles.button}>
-          <RoundButton theme='red' text="アカウント削除" handleButtonClick={handleUserDelete} css={styles.button}/>
+          <RoundButton
+            theme='red'
+            text='アカウント削除'
+            handleButtonClick={handleUserDelete}
+            css={styles.button}
+          />
         </div>
       </div>
     </>

@@ -16,5 +16,5 @@ export const styles = {
     color: ${color.white};
     font-size: 10px;
     text-align: center;
-  `
+  `,
 }

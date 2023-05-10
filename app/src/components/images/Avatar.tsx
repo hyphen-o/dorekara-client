@@ -14,8 +14,8 @@ const Avatar: FC = () => {
         const user = await authUtils.isAuthenticated()
         setImgUrl(user.image_url)
         setName(user.name)
-        setLoading(false)      
-      } catch(e) {        
+        setLoading(false)
+      } catch (e) {
         setLoading(false)
       }
     })()
@@ -24,16 +24,19 @@ const Avatar: FC = () => {
   return (
     <>
       <div css={styles.wrapper}>
-        {
-          !loading && 
+        {!loading && (
           <img
-          src={imgUrl === 'default_url.png' ? `/images/icons/usericon.png` : imgUrl}
-          alt='avatar'
-          width={60}
-          height={60}
-          css={styles.image}
+            src={
+              imgUrl === 'default_url.png'
+                ? `/images/icons/usericon.png`
+                : imgUrl
+            }
+            alt='avatar'
+            width={60}
+            height={60}
+            css={styles.image}
           />
-        }
+        )}
         <div css={styles.name}>{name}</div>
       </div>
     </>
