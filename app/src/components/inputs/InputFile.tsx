@@ -15,10 +15,10 @@ const InputFile: FC = () => {
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       setLoading(true)
       const user = await authUtils.isAuthenticated()
-      if(!user) {
+      if (!user) {
         router.push('/login')
       }
       setImgUrl(user.image_url)
@@ -29,7 +29,7 @@ const InputFile: FC = () => {
   const onChangeHandler = async (e: ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.files) {
       const body = {
-        upload_image: e.currentTarget.files[0]
+        upload_image: e.currentTarget.files[0],
       }
       try {
         setLoading(true)
@@ -44,11 +44,14 @@ const InputFile: FC = () => {
 
   return (
     <>
-      {loading ? 'loading...' : (
-          <Preview image_url={imgUrl}></Preview>
-        )}
+      {loading ? 'loading...' : <Preview image_url={imgUrl}></Preview>}
       <label css={styles.label}>
-        <input onChange={onChangeHandler} type='file' accept='image/*' css={styles.input}/>
+        <input
+          onChange={onChangeHandler}
+          type='file'
+          accept='image/*'
+          css={styles.input}
+        />
       </label>
     </>
   )

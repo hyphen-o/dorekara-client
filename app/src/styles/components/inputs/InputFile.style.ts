@@ -7,6 +7,5 @@ export const styles = {
     background-color: ${color.white};
     color: ${color.red};
   `,
-  input: css`
-  `
+  input: css``,
 }
