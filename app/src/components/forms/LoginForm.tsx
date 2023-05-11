@@ -23,7 +23,7 @@ const LoginForm: FC = () => {
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const res = await authApi.login(data)     
+      const res = await authApi.login(data)
       localStorage.setItem('token', res.data.authorization.token)
       router.push('home')
     } catch (e) {
