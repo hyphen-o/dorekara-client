@@ -12,7 +12,8 @@ import { useSelector } from 'react-redux'
 const Config: NextPageWithLayout = () => {
   const router = useRouter()
   const user = useSelector((state: UserState) => state.user.value)
-  const handleSignOut = (): void => {
+  const handleSignOut = async () => {
+    await authApi.logout(localStorage.getItem('token'))
     localStorage.removeItem('token')
     router.push('/login')
   }
