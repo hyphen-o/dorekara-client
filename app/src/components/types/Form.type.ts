@@ -1,7 +1,7 @@
 export type SongFormValues = {
-  name: string
+  name?: string
   artist_id: number
-  key: number
+  key?: number
 }
 
 export type ArtistFormValues = {
