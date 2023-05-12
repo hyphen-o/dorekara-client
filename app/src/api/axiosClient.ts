@@ -1,7 +1,5 @@
 import axios from 'axios'
-import fs from 'fs'
 import https from 'https'
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 export const axiosClient = (token, contentType = 'application/json') =>
   axios.create({
@@ -14,7 +12,6 @@ export const axiosClient = (token, contentType = 'application/json') =>
     },
     httpsAgent: new https.Agent({
       rejectUnauthorized: false,
-      cert: fs.readFileSync('./csr.pem'),
     }),
   })
 
