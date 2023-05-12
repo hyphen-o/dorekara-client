@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { fs } from 'fs'
+import fs from 'fs'
 import https from 'https'
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
@@ -12,10 +12,10 @@ export const axiosClient = (token, contentType = 'application/json') =>
       'Access-Control-Allow-Origin': '*',
       Authorization: `Bearer ${token}`,
     },
-    httpsAgent: new https.Agent({  
+    httpsAgent: new https.Agent({
       rejectUnauthorized: false,
       cert: fs.readFileSync('./csr.pem'),
-    })
+    }),
   })
 
 axios.interceptors.request.use(
