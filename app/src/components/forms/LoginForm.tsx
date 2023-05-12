@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import SubmitButton from '../buttons/SubmitButton'
 import { styles } from '@/styles/components/forms/AuthForm.style'
 import { useForm, SubmitHandler } from 'react-hook-form'
@@ -14,6 +14,7 @@ type Inputs = {
 
 const LoginForm: FC = () => {
   const router = useRouter()
+  const [errorMsg, setErrorMsg] = useState<string>('')
 
   const {
     register,
@@ -25,8 +26,8 @@ const LoginForm: FC = () => {
       const res = await authApi.login(data)
       localStorage.setItem('token', res.data.authorization.token)
       router.push('home')
-    } catch (error) {
-      return error
+    } catch (e) {
+      setErrorMsg(e.response.data.error.msg)
     }
   }
 
@@ -48,6 +49,7 @@ const LoginForm: FC = () => {
         {errors.password?.type == 'minLength' && (
           <Error>パスワードは8文字以上必要です</Error>
         )}
+        <Error>{errorMsg}</Error>
 
         <SubmitButton text='ログイン' />
       </form>
