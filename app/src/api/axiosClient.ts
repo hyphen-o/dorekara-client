@@ -1,4 +1,6 @@
 import axios from 'axios'
+import https from 'https'
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 export const axiosClient = (token, contentType = 'application/json') =>
   axios.create({
@@ -9,6 +11,9 @@ export const axiosClient = (token, contentType = 'application/json') =>
       'Access-Control-Allow-Origin': '*',
       Authorization: `Bearer ${token}`,
     },
+    httpsAgent: new https.Agent({  
+      rejectUnauthorized: false
+    })
   })
 
 axios.interceptors.request.use(
