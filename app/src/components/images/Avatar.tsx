@@ -16,7 +16,7 @@ const Avatar: FC = () => {
 
         const user = await authUtils.isAuthenticated()
         if (!user) router.push('/login')
-        
+
         setImgUrl(user.image_url)
         setName(user.name)
         setLoading(false)
