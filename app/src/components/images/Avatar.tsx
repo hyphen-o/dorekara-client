@@ -1,8 +1,10 @@
 import { styles } from '@/styles/components/images/Avatar.style'
 import { authUtils } from '@/utils/authUtils'
+import { useRouter } from 'next/router'
 import { FC, useEffect, useState } from 'react'
 
 const Avatar: FC = () => {
+  const router = useRouter()
   const [loading, setLoading] = useState<boolean>(false)
   const [imgUrl, setImgUrl] = useState<string>('')
   const [name, setName] = useState<string>('')
@@ -11,7 +13,10 @@ const Avatar: FC = () => {
     ;(async () => {
       try {
         setLoading(true)
+
         const user = await authUtils.isAuthenticated()
+        if (!user) router.push('/login')
+        
         setImgUrl(user.image_url)
         setName(user.name)
         setLoading(false)
