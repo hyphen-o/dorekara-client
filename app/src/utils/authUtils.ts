@@ -7,7 +7,7 @@ export const authUtils = {
         const res = await authApi.me(localStorage.getItem('token'))
         if (res.data.user) return res.data.user
       }
-  
+
       return false
     } catch (e) {
       localStorage.removeItem('token')
