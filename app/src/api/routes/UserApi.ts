@@ -1,7 +1,7 @@
 import { axiosClient } from '@/api/axiosClient'
 
 export const userApi = {
-  getImage: (id) => axiosClient(null).get(`image/${id}`),
+  getImage: (id) => axiosClient().get(`image/${id}`),
   uploadImage: (id, params) =>
     axiosClient(
       null,

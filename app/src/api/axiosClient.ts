@@ -1,7 +1,9 @@
 import axios from 'axios'
 import https from 'https'
 
-export const axiosClient = (token, contentType = 'application/json') =>
+
+
+export const axiosClient = (token = null, contentType = 'application/json') =>
   axios.create({
     baseURL:
       'http://ec2-43-206-130-36.ap-northeast-1.compute.amazonaws.com/api',
