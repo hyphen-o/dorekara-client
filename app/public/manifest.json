@@ -3,7 +3,7 @@
     "background_color": "#fffff",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "/login",
     "name": "dorekara",
     "short_name": "dorekara",
     "description": "dorekara",
