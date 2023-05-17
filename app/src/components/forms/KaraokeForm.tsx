@@ -92,10 +92,12 @@ const KaraokeForm: FC = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} css={styles.form}>
-        {
-          !isOpen && <div css={styles.text}>TAP!</div>
-        }
-        <table css={css`border: solid;`}>
+        {!isOpen && <div css={styles.text}>TAP!</div>}
+        <table
+          css={css`
+            border: solid;
+          `}
+        >
           <tr>
             <th css={styles.text}>
               <div css={styles.text}>{isOpen && song.name}</div>
@@ -112,7 +114,7 @@ const KaraokeForm: FC = () => {
             </td>
           </tr>
         </table>
-        
+
         <Dorekana isOpen={isOpen}></Dorekana>
         {!isOpen && (
           <Selector

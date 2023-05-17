@@ -1,6 +1,6 @@
 import { color, util } from '@/styles/theme'
 import { css } from '@emotion/react'
-import {rgba} from 'emotion-rgba'
+import { rgba } from 'emotion-rgba'
 
 export const styles = {
   button: ({ theme }) => {

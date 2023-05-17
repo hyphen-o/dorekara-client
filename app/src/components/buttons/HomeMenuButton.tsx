@@ -21,7 +21,13 @@ const HomeMenuButton: FC<Props> = ({ text, page }) => {
         onClick={() => changePage(page)}
         css={styles.button}
       >
-        <Image src={`/images/icons/${page}.png`} alt={text} width={36} height={36} css={styles.icon}/>
+        <Image
+          src={`/images/icons/${page}.png`}
+          alt={text}
+          width={36}
+          height={36}
+          css={styles.icon}
+        />
         <div css={styles.text}>{text}</div>
       </button>
     </>

@@ -19,11 +19,9 @@ export const styles = {
     ${util.push};
     padding: 0 1.5rem;
   `,
-  icon: css`
-    
-  `,
+  icon: css``,
   text: css`
     text-align: center;
     margin: 0 auto;
-  `
+  `,
 }
