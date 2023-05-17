@@ -6,7 +6,7 @@ export const styles = {
     border-radius: 100px;
     height: 43px;
     width: 260px;
-    border: solid ${color.red};
+    border: solid 2px ${color.red};
     background-color: ${color.white};
     color: ${color.red};
     padding: 0 20px;

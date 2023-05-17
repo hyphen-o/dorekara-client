@@ -1,5 +1,6 @@
-import { color } from '@/styles/theme'
+import { color, util } from '@/styles/theme'
 import { css } from '@emotion/react'
+import { rgba } from 'emotion-rgba'
 
 export const styles = {
   button: css`
@@ -13,7 +14,14 @@ export const styles = {
     background-color: ${color.white};
     display: flex;
     align-items: center;
-    justify-content: center;
+    box-shadow: 0 0.3rem 0.1rem ${rgba(color.darkgray, color.shadow_alpha)};
     margin-bottom: 28px;
+    ${util.push};
+    padding: 0 1.5rem;
+  `,
+  icon: css``,
+  text: css`
+    text-align: center;
+    margin: 0 auto;
   `,
 }
