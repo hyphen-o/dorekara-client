@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/login",
-    "name": "dorekara",
-    "short_name": "dorekara",
-    "description": "dorekara",
+    "name": "どれカラ -カラオケ選曲アプリ-",
+    "short_name": "どれカラ",
+    "description": "どれカラはカラオケで歌う曲を自分でまとめて，ランダムに選曲してくれるアプリです．",
     "icons": [
         {
             "src": "/icon-192x192.png",
