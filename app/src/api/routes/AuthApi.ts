@@ -1,9 +1,9 @@
 import { axiosClient } from '@/api/axiosClient'
 
 export const authApi = {
-  register: (params) => axiosClient(null).post('register', params),
-  login: (params) => axiosClient(null).post('login', params),
+  register: (params) => axiosClient().post('register', params),
+  login: (params) => axiosClient().post('login', params),
   logout: (token) => axiosClient(token).post('logout'),
-  destroy: (params) => axiosClient(null).delete('destroy', { params }),
+  destroy: (params) => axiosClient().delete('destroy', { params }),
   me: (token) => axiosClient(token).get('me'),
 }
