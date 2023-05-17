@@ -11,6 +11,7 @@ import { historyApi } from '@/api/routes/HistoriesApi'
 import { useSelector } from 'react-redux'
 import { UserState } from '@/redux/types/userSlice.type'
 import { artistApi } from '@/api/routes/ArtistApi'
+import { css } from '@emotion/react'
 
 const KaraokeForm: FC = () => {
   const router = useRouter()
@@ -91,9 +92,27 @@ const KaraokeForm: FC = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} css={styles.form}>
-        <div css={styles.text}>{isOpen ? song.name : 'TAP!'}</div>
-        <div css={styles.artist}>{isOpen && artist}</div>
-        <div css={styles.key}>{isOpen && song.key && song.key}</div>
+        {
+          !isOpen && <div css={styles.text}>TAP!</div>
+        }
+        <table css={css`border: solid;`}>
+          <tr>
+            <th css={styles.text}>
+              <div css={styles.text}>{isOpen && song.name}</div>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <div css={styles.artist}>{isOpen && artist}</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div css={styles.key}>{isOpen && song.key && song.key}</div>
+            </td>
+          </tr>
+        </table>
+        
         <Dorekana isOpen={isOpen}></Dorekana>
         {!isOpen && (
           <Selector

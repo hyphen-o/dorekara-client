@@ -14,6 +14,7 @@
     "@hookform/resolvers": "^3.1.0",
     "@reduxjs/toolkit": "^1.9.4",
     "axios": "^1.3.6",
+    "emotion-rgba": "^0.0.11",
     "https": "^1.0.0",
     "modern-css-reset": "^1.4.0",
     "next": "^13.3.0",

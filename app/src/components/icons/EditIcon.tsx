@@ -10,7 +10,7 @@ const EditIcon: FC<Props> = ({ onIconClick }) => {
     <>
       <div onClick={onIconClick}>
         <Image
-          src='/images/icons/pencil.png'
+          src='/images/icons/edit.png'
           alt='edit'
           width={28}
           height={28}
