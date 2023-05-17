@@ -10,7 +10,7 @@ const TrashIcon: FC<Props> = ({ onIconClick }) => {
     <>
       <div onClick={onIconClick}>
         <Image
-          src='/images/icons/trash.png'
+          src='/images/icons/delete.png'
           alt='trash'
           width={28}
           height={28}

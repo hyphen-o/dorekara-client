@@ -11,7 +11,7 @@ const Home: NextPageWithLayout = () => {
       <div css={styles.wrapper}>
         <AvatarButton></AvatarButton>
         <SingButton></SingButton>
-        <HomeMenuButton text='曲一覧' page='songs'></HomeMenuButton>
+        <HomeMenuButton text='楽曲一覧' page='songs'></HomeMenuButton>
         <HomeMenuButton text='アーティスト一覧' page='artists'></HomeMenuButton>
         <HomeMenuButton text='カラオケ履歴' page='histories'></HomeMenuButton>
       </div>
