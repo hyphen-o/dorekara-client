@@ -1,5 +1,4 @@
-import { css } from "@emotion/react";
-
+import { css } from '@emotion/react'
 
 export const color = {
   gray: '#F2F2F2',
@@ -13,8 +12,8 @@ export const color = {
 export const util = {
   push: css`
     :active {
-        transform: translate(0, 0.3rem);
-        box-shadow: none;
+      transform: translate(0, 0.3rem);
+      box-shadow: none;
     }
-  `
+  `,
 }
