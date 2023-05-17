@@ -1889,6 +1889,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"emotion-rgba@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "emotion-rgba@npm:0.0.11"
+  checksum: 159d5ffe5af8f07584efcb535dfc234fc852b99685f5e872ce833283a4c779591a12ab227c03932d8c0d1ac5d27b78351264a4ce951bc5d304ef58a1224cef6d
+  languageName: node
+  linkType: hard
+
 "encoding@npm:^0.1.13":
   version: 0.1.13
   resolution: "encoding@npm:0.1.13"
@@ -5693,6 +5700,7 @@ __metadata:
     "@types/react-dom": ^18.0.11
     axios: ^1.3.6
     babel-loader: ^9.1.2
+    emotion-rgba: ^0.0.11
     eslint: 8.38.0
     eslint-config-next: 13.3.0
     eslint-config-prettier: ^8.8.0

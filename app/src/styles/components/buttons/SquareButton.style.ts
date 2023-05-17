@@ -1,5 +1,6 @@
 import { color } from '@/styles/theme'
 import { css } from '@emotion/react'
+import { rgba } from 'emotion-rgba'
 
 export const styles = {
   button: css`
@@ -14,6 +15,7 @@ export const styles = {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    box-shadow: 0 0.3rem 0.1rem ${rgba(color.darkgray, color.shadow_alpha)};
   `,
 
   key: css`
