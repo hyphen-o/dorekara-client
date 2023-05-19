@@ -29,7 +29,7 @@ const Avatar: FC = () => {
   return (
     <>
       <div css={styles.wrapper}>
-        {!loading && (
+        {!loading ? 
           <img
             src={
               imgUrl === 'default_url.png'
@@ -41,7 +41,15 @@ const Avatar: FC = () => {
             height={60}
             css={styles.image}
           />
-        )}
+        : 
+          <img
+            src='/images/icons/usericon.png'
+            alt='loading'
+            width={60}
+            height={60}
+            css={styles.image}
+          />
+        }
         <div css={styles.name}>{name}</div>
       </div>
     </>

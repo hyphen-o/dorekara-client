@@ -16,7 +16,7 @@ const Preview: FC<Props> = ({ image_url }) => {
         }
         alt='preview'
         css={styles.image}
-      ></img>
+      />
     </>
   )
 }
