@@ -25,6 +25,7 @@ const Dorekana: FC<Props> = ({ isOpen }) => {
               alt='dorekana-before'
               width={300}
               height={300}
+              css={styles.image}
             />
           </button>
         )}
