@@ -1,8 +1,6 @@
 import axios from 'axios'
 import https from 'https'
 
-
-
 export const axiosClient = (token = null, contentType = 'application/json') =>
   axios.create({
     baseURL:

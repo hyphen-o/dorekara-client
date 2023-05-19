@@ -11,7 +11,6 @@ import { historyApi } from '@/api/routes/HistoriesApi'
 import { useSelector } from 'react-redux'
 import { UserState } from '@/redux/types/userSlice.type'
 import { artistApi } from '@/api/routes/ArtistApi'
-import { css } from '@emotion/react'
 
 const KaraokeForm: FC = () => {
   const router = useRouter()

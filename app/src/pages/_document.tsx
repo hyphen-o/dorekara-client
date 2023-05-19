@@ -7,7 +7,7 @@ class Document extends NextDocument<Props> {
     return (
       <Html>
         <Head>
-          <link rel="manifest" href="/manifest.json" />
+          <link rel='manifest' href='/manifest.json' />
           <link rel='shortcut icon' href='/images/dorekana/shortcut.png' />
         </Head>
         <body>

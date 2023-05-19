@@ -6,6 +6,5 @@ export const songApi = {
   destroy: (params) => axiosClient().delete(`song/destroy`, { params }),
   create: (user_id, params) =>
     axiosClient().post(`song/${user_id}/create`, params),
-  edit: (user_id, params) =>
-    axiosClient().put(`song/${user_id}/edit`, params),
+  edit: (user_id, params) => axiosClient().put(`song/${user_id}/edit`, params),
 }

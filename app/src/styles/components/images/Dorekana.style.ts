@@ -17,4 +17,20 @@ export const styles = {
       }
     }
   `,
+
+  image: css`
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 0.5s;
+    animation-name: anim_h;
+    @keyframes anim_h {
+      0% {
+        transform: translate(0px, 0);
+      }
+      100% {
+        transform: translate(5px, 0);
+      }
+    }
+  `,
 }
