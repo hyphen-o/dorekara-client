@@ -7,10 +7,11 @@ const nextConfig = {
   webpack: (config) => {
     config.watchOptions = {
       poll: 800,
-      aggregateTimeout: 300
+      aggregateTimeout: 300,
     }
     return config
-  }
+  },
 }
 
-module.exports = process.env.NODE_ENV === 'development' ? nextConfig : withPWA(nextConfig)
+module.exports =
+  process.env.NODE_ENV === 'development' ? nextConfig : withPWA(nextConfig)

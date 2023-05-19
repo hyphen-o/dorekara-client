@@ -1,32 +1,32 @@
 {
-    "theme_color": "#E85456",
-    "background_color": "#fffff",
-    "display": "standalone",
-    "scope": "/",
-    "start_url": "/login",
-    "name": "どれカラ -カラオケ選曲アプリ-",
-    "short_name": "どれカラ",
-    "description": "どれカラはカラオケで歌う曲を自分でまとめて，ランダムに選曲してくれるアプリです．",
-    "icons": [
-        {
-            "src": "/icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/icon-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        },
-        {
-            "src": "/icon-384x384.png",
-            "sizes": "384x384",
-            "type": "image/png"
-        },
-        {
-            "src": "/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+  "theme_color": "#E85456",
+  "background_color": "#fffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/login",
+  "name": "どれカラ -カラオケ選曲アプリ-",
+  "short_name": "どれカラ",
+  "description": "どれカラはカラオケで歌う曲を自分でまとめて，ランダムに選曲してくれるアプリです．",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
