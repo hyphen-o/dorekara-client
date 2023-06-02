@@ -22,7 +22,7 @@ const HomeMenuButton: FC<Props> = ({ text, page }) => {
         css={styles.button}
       >
         <Image
-          src={`/images/icons/${page}.png`}
+          src={`/images/icons/${page}.svg`}
           alt={text}
           width={36}
           height={36}
