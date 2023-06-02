@@ -28,7 +28,7 @@ const SingButton: FC = () => {
     <>
       <div onClick={handleSingButtonClick}>
         <Image
-          src='/images/icons/singButton.png'
+          src='/images/icons/karaokeButton.svg'
           alt='singbutton'
           width={164}
           height={164}
