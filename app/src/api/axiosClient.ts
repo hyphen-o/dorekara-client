@@ -3,8 +3,7 @@ import https from 'https'
 
 export const axiosClient = (token = null, contentType = 'application/json') =>
   axios.create({
-    baseURL:
-      'https://www.dorekara.com/api',
+    baseURL: 'https://www.dorekara.com/api',
     headers: {
       'Content-Type': contentType,
       'Access-Control-Allow-Origin': '*',
