@@ -18,12 +18,10 @@ const Songs: NextPageWithLayout = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log(router.query.date)
     ;(async () => {
       const user = await authUtils.isAuthenticated()
       if (!user) router.push('login')
       const res = await historyApi.getSongs(user.id, { date: title })
-      console.log(res.data)
       dispatch(setSong(res.data[0]))
     })()
   }, [])
