@@ -22,7 +22,6 @@ const Index: NextPageWithLayout = () => {
       const user = await authUtils.isAuthenticated()
       if (!user) router.push('login')
       const res = await artistApi.getAll(user.id)
-      console.log(res.data[0])
       dispatch(setArtist(res.data[0]))
     })()
   }, [])

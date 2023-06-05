@@ -21,7 +21,6 @@ const Index: NextPageWithLayout = () => {
       const user = await authUtils.isAuthenticated()
       if (!user) router.push('login')
       const res = await historyApi.getDates(user.id)
-      console.log(res.data[0])
       dispatch(setDate(res.data[0]))
     })()
   }, [])

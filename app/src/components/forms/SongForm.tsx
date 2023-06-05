@@ -59,7 +59,6 @@ const SongForm: FC<Props> = ({ id }) => {
       } else {
         songApi.create(user.id, data)
       }
-      console.log(data)
       router.back()
     } catch (error) {
       return error
