@@ -28,7 +28,6 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
         if (!user) router.push('/login')
         else {
           const res = await authApi.me(localStorage.getItem('token'))
-          console.log(res.data.user)
           dispatch(setUser(res.data.user))
         }
         //ユーザがカラオケ中であればカラオケ画面にリダイレクト

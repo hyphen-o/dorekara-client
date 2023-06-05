@@ -18,7 +18,6 @@ const SongsButton: FC<Props> = ({ song }) => {
 
   const handleTrashIconClick = () => {
     ;(async () => {
-      console.log('delete')
       await songApi.destroy({ song_id: song.id, user_id: user.id })
       router.reload()
     })()
