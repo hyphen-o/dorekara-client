@@ -27,7 +27,6 @@ const RegisterForm: FC = () => {
     try {
       const res = await authApi.register(data)
       localStorage.setItem('token', res.data.authorization.token)
-      console.log(res)
       router.push('home')
     } catch (error) {
       return error
