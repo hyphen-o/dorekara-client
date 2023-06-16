@@ -6,7 +6,7 @@ export const styles = {
     position: ${isHome ? '' : 'fixed'};
     width: 100%;
     background-color: ${color.red};
-    height: ${isHome ? '36vh' : '26vh'};
+    height: ${isHome ? '36vh' : '220px'};
     padding-top: 25px;
     margin-bottom: ${isHome ? '132px' : '5px'};
     transition: 0.3s;
