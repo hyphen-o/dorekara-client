@@ -1,4 +1,3 @@
-import { color } from '@/styles/theme'
 import { css } from '@emotion/react'
 
 export const styles = {
@@ -14,8 +13,6 @@ export const styles = {
       width: 100px;
       height: 100px;
       background-color: black;
-
     }
   `,
-
 }
