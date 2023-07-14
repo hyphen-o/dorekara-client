@@ -22,7 +22,6 @@ const ArtistForm: FC = () => {
 
   const onSubmit: SubmitHandler<ArtistFormValues> = async (data) => {
     try {
-      console.log(data)
       await artistApi.create(user.id, data)
       router.reload()
     } catch (error) {
