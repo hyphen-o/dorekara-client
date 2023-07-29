@@ -12,7 +12,7 @@ export const styles = {
     padding: 0 20px;
     display: flex;
     margin: 8px 0px;
-    font-size: 14px;
+    font-size: 16px;
     ::placeholder {
       color: ${color.placeholder};
     }
