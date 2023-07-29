@@ -25,7 +25,7 @@ const ArtistsButton: FC<Props> = ({ artist }) => {
 
   return (
     <>
-      <SquareButton text={truncateString({text: artist.name, maxLength: 10})}>
+      <SquareButton text={truncateString({ text: artist.name, maxLength: 10 })}>
         <TrashIcon onIconClick={handleTrashIconClick} />
       </SquareButton>
     </>
