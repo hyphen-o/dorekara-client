@@ -30,7 +30,10 @@ const SongsButton: FC<Props> = ({ song }) => {
 
   return (
     <>
-      <SquareButton text={truncateString({text: song.name, maxLength: 8})} song_key={song.key}>
+      <SquareButton
+        text={truncateString({ text: song.name, maxLength: 8 })}
+        song_key={song.key}
+      >
         <EditIcon onIconClick={handleEditIconClick} />
         <TrashIcon onIconClick={handleTrashIconClick} />
       </SquareButton>
