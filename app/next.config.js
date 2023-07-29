@@ -10,7 +10,7 @@ const nextConfig = {
       aggregateTimeout: 300,
     }
     return config
-  },
+  }
 }
 
 module.exports =

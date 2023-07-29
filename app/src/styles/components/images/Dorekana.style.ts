@@ -10,7 +10,7 @@ export const styles = {
   fade_in: css`
     margin: 0 auto;
     opacity: 0;
-    animation: fadein-anim 1s linear forwards;
+    -webkit-animation: fadein-anim 1s linear forwards;
     @keyframes fadein-anim {
       100% {
         opacity: 1;
@@ -19,11 +19,11 @@ export const styles = {
   `,
 
   image: css`
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-duration: 0.5s;
-    animation-name: anim_h;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: anim_h;
     @keyframes anim_h {
       0% {
         transform: translate(0px, 0);
