@@ -38,9 +38,6 @@ const ArtistForm: FC = () => {
       {errors.name?.type === 'required' && (
         <Error>アーティスト名は必ず入力してください</Error>
       )}
-      {errors.name?.type === 'maxLength' && (
-        <Error>アーティスト名は8文字以内で入力して下さい</Error>
-      )}
     </>
   )
 }
