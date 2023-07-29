@@ -73,9 +73,6 @@ const SongForm: FC<Props> = ({ id }) => {
         {errors.name?.type === 'required' && (
           <Error>曲のタイトルは必ず入力してください</Error>
         )}
-        {errors.name?.type === 'maxLength' && (
-          <Error>曲のタイトルは8文字以内で入力して下さい</Error>
-        )}
         <div>アーティスト</div>
         <Selector
           submit={register}
