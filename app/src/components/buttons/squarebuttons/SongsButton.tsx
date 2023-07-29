@@ -7,6 +7,7 @@ import { UserState } from '@/redux/types/userSlice.type'
 import { Song } from '@/redux/types/songSlice.type'
 import { songApi } from '@/api/routes/SongApi'
 import EditIcon from '@/components/icons/EditIcon'
+import { truncateString } from '@/utils/formatText'
 
 type Props = {
   song: Song
@@ -29,7 +30,10 @@ const SongsButton: FC<Props> = ({ song }) => {
 
   return (
     <>
-      <SquareButton text={song.name} song_key={song.key}>
+      <SquareButton
+        text={truncateString({ text: song.name, maxLength: 8 })}
+        song_key={song.key}
+      >
         <EditIcon onIconClick={handleEditIconClick} />
         <TrashIcon onIconClick={handleTrashIconClick} />
       </SquareButton>

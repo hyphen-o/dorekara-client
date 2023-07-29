@@ -22,7 +22,6 @@ const InputArtist: FC<InputProps> = ({ submit, label, value }) => {
         css={styles.input}
         {...submit(label, {
           required: true,
-          maxLength: 8,
         })}
         type='text'
         placeholder={label}
