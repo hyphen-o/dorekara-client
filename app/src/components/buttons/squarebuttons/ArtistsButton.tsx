@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { artistApi } from '@/api/routes/ArtistApi'
 import { useSelector } from 'react-redux'
 import { UserState } from '@/redux/types/userSlice.type'
+import { truncateString } from '@/utils/formatText'
 
 type Props = {
   artist: Artist
@@ -24,7 +25,7 @@ const ArtistsButton: FC<Props> = ({ artist }) => {
 
   return (
     <>
-      <SquareButton text={artist.name}>
+      <SquareButton text={truncateString({ text: artist.name, maxLength: 10 })}>
         <TrashIcon onIconClick={handleTrashIconClick} />
       </SquareButton>
     </>
