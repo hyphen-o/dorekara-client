@@ -12,7 +12,7 @@ const Dorekana: FC<Props> = ({ isOpen }) => {
       <div>
         {isOpen ? (
           <Image
-            src='/images/dorekana/dorekana-after.png'
+            src='/images/dorekana/dorekana-after.svg'
             alt='dorekana-after'
             width={300}
             height={300}
@@ -21,7 +21,7 @@ const Dorekana: FC<Props> = ({ isOpen }) => {
         ) : (
           <button type='submit' css={styles.button}>
             <Image
-              src='/images/dorekana/dorekana-before.png'
+              src='/images/dorekana/dorekana-before.svg'
               alt='dorekana-before'
               width={300}
               height={300}
