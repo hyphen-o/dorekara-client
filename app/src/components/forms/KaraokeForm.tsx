@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { KaraokeFormValues } from '../types/Form.type'
 import Dorekana from '../images/Dorekana'
@@ -8,13 +8,14 @@ import { styles } from '@/styles/components/forms/KaraokeForm.style'
 import { Song } from '@/redux/types/songSlice.type'
 import { useRouter } from 'next/router'
 import { historyApi } from '@/api/routes/HistoriesApi'
-import { useSelector } from 'react-redux'
-import { UserState } from '@/redux/types/userSlice.type'
 import { artistApi } from '@/api/routes/ArtistApi'
+import NoteIcon from '@/components/icons/NoteIcon'
+import { authUtils } from '@/utils/authUtils'
+import { authApi } from '@/api/routes/AuthApi'
 
 const KaraokeForm: FC = () => {
   const router = useRouter()
-  const user = useSelector((state: UserState) => state.user.value)
+  const [userId, setUserId] = useState()
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [song, setSong] = useState<Song>({
     id: null,
@@ -26,9 +27,36 @@ const KaraokeForm: FC = () => {
 
   const { register, handleSubmit } = useForm<KaraokeFormValues>()
 
+  useEffect(() => {
+    try {
+      ;(async () => {
+        //ユーザがログイン状態か確認
+        const user = await authUtils.isAuthenticated()
+        if (!user) router.push('/login')
+        else {
+          const res = await authApi.me(localStorage.getItem('token'))
+          setUserId(res.data.user.id)
+        }
+      })()
+    } catch (error) {
+      router.push('/login')
+    }
+  }, [])
+
   //ローカルストレージの曲を削除
   const deleteLocalSongs = (): void => {
     localStorage.removeItem('songs')
+  }
+
+  //文字列の長さから文字サイズを出力
+  const calculateSize = (text: string): string => {
+    if(text.length <= 8) {
+      return 'st'
+    } else if (text.length <= 13) {
+      return 'md' 
+    } else {
+      return 'lg'
+    }
   }
 
   const onSubmit: SubmitHandler<KaraokeFormValues> = async (data) => {
@@ -71,7 +99,7 @@ const KaraokeForm: FC = () => {
       }
 
       //カラオケ履歴に曲を追加
-      await historyApi.create(user.id, { song_id: random_song.id })
+      await historyApi.create(userId, { song_id: random_song.id })
 
       //ローカルの曲からランダムに選んだ曲を取り除く
       const new_songs = songs.filter((song) => song.id != random_song.id)
@@ -91,8 +119,11 @@ const KaraokeForm: FC = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} css={styles.form}>
-        {!isOpen && <div css={styles.text}>TAP!</div>}
-        <div css={styles.text}>{isOpen && song.name}</div>
+        {!isOpen && <div css={styles.text('st')}>TAP!</div>}
+        <div css={styles.songNameWrapper}>
+          {isOpen && <NoteIcon />}
+          {song.name && <div css={styles.text(calculateSize(song.name))}>{isOpen && song.name}</div>}
+        </div>
         <div css={styles.artist}>{isOpen && artist}</div>
         <div css={styles.key}>{isOpen && song.key && song.key}</div>
 
