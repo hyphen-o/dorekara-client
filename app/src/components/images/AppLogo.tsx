@@ -8,7 +8,7 @@ const AppLogo: FC<Props> = () => {
   return (
     <>
       <Image
-        src='/images/logos/appLogo.svg'
+        src='/images/logos/applogo.png'
         alt='dorekara-app-logo'
         css={styles.image}
         width={120}
