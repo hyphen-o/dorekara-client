@@ -13,10 +13,11 @@ import { authUtils } from '@/utils/authUtils'
 
 type AppLayoutProps = {
   children: ReactNode
-  isHome: boolean
+  isHome?: boolean
+  label?: string
 }
 
-const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
+const AppLayout: FC<AppLayoutProps> = ({ children, isHome, label }) => {
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -45,7 +46,14 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
       <header css={styles.header(isHome)}>
         <AppLogo />
         <LogoText />
-        {!isHome && <BackButton></BackButton>}
+        {!isHome && (
+          <div css={styles.labelWrapper}>
+            <div css={styles.backButton}>
+              <BackButton />
+            </div>
+            <div css={styles.label}>{label}</div>
+          </div>
+        )}
       </header>
       <main>{children}</main>
     </>
@@ -53,7 +61,8 @@ const AppLayout: FC<AppLayoutProps> = ({ children, isHome }) => {
 }
 
 type LayoutProps = {
-  isHome: boolean
+  isHome?: boolean
+  label?: string
 }
 
 export const createGetAppLayout = (layoutProps?: LayoutProps): GetLayout => {
