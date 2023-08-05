@@ -8,7 +8,7 @@ const AuthLogo: FC<Props> = () => {
   return (
     <>
       <Image
-        src='/images/logos/logo.svg'
+        src='/images/logos/logo.png'
         alt='dorekara-logo'
         css={styles.image}
         width={250}
