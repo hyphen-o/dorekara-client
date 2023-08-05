@@ -2,7 +2,6 @@ import { artistApi } from '@/api/routes/ArtistApi'
 import ArtistsButton from '@/components/buttons/squarebuttons/ArtistsButton'
 import ArtistForm from '@/components/forms/ArtistForm'
 import { createGetAppLayout } from '@/components/layouts/AppLayout'
-import Title from '@/components/texts/PageTitle'
 import { NextPageWithLayout } from '@/components/types/Layout.type'
 import { setArtist } from '@/redux/slices/artistSlice'
 import { ArtistState } from '@/redux/types/artistSlice.type'
@@ -29,7 +28,6 @@ const Index: NextPageWithLayout = () => {
   return (
     <>
       <div css={styles.wrapper}>
-        <Title title='アーティスト一覧'></Title>
         {artists.map((artist) => {
           return (
             <>
@@ -43,6 +41,6 @@ const Index: NextPageWithLayout = () => {
   )
 }
 
-Index.getLayout = createGetAppLayout()
+Index.getLayout = createGetAppLayout({ label: 'アーティスト一覧' })
 
 export default Index

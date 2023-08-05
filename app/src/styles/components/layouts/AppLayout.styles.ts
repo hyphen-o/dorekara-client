@@ -12,4 +12,24 @@ export const styles = {
     transition: 0.3s;
     border-radius: 0 0 20px 20px;
   `,
+
+  labelWrapper: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    margin-top: 25px;
+  `,
+
+  backButton: css`
+    position: absolute;
+    left: 0;
+  `,
+
+  label: css`
+    color: white;
+    text-align: center;
+    font-weight: 500;
+  `,
 }

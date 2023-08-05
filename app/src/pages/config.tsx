@@ -2,7 +2,6 @@ import { authApi } from '@/api/routes/AuthApi'
 import RoundButton from '@/components/buttons/roundbuttons/RoundButton'
 import InputFile from '@/components/inputs/InputFile'
 import { createGetAppLayout } from '@/components/layouts/AppLayout'
-import Title from '@/components/texts/PageTitle'
 import { NextPageWithLayout } from '@/components/types/Layout.type'
 import { UserState } from '@/redux/types/userSlice.type'
 import { styles } from '@/styles/pages/Config.style'
@@ -30,7 +29,6 @@ const Config: NextPageWithLayout = () => {
   return (
     <>
       <div css={styles.wrapper}>
-        <Title title='ユーザ設定' />
         <InputFile />
         <div css={styles.button}>
           <RoundButton
@@ -52,6 +50,6 @@ const Config: NextPageWithLayout = () => {
   )
 }
 
-Config.getLayout = createGetAppLayout()
+Config.getLayout = createGetAppLayout({ label: 'ユーザ設定' })
 
 export default Config

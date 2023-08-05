@@ -19,7 +19,7 @@ const Index: NextPage = () => {
             css={styles.image}
             width={300}
             height={300}
-          ></Image>
+          />
           <p css={styles.text}>「一曲目何歌おうかな...」</p>
           <p css={styles.text}>「次の曲を決めるのに時間がかかる」</p>
           <br />
