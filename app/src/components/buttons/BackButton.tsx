@@ -9,7 +9,7 @@ const BackButton: FC = () => {
     <>
       <div onClick={router.back}>
         <Image
-          src='/images/icons/backIcon.png'
+          src='/images/icons/backIcon.svg'
           alt='backbutton'
           width={42}
           height={42}
