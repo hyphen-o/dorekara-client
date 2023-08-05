@@ -17,6 +17,6 @@ const Edit: NextPageWithLayout = () => {
   )
 }
 
-Edit.getLayout = createGetAppLayout({label: "楽曲を編集"})
+Edit.getLayout = createGetAppLayout({ label: '楽曲を編集' })
 
 export default Edit

@@ -31,5 +31,5 @@ export const styles = {
     color: white;
     text-align: center;
     font-weight: 500;
-  `
+  `,
 }

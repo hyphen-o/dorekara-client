@@ -42,6 +42,6 @@ const Songs: NextPageWithLayout = () => {
   )
 }
 
-Songs.getLayout = createGetAppLayout({label: "履歴詳細"})
+Songs.getLayout = createGetAppLayout({ label: '履歴詳細' })
 
 export default Songs

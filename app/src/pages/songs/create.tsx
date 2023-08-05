@@ -13,6 +13,6 @@ const Create: NextPageWithLayout = () => {
   )
 }
 
-Create.getLayout = createGetAppLayout({label: "楽曲を作成"})
+Create.getLayout = createGetAppLayout({ label: '楽曲を作成' })
 
 export default Create
