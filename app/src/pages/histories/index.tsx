@@ -39,6 +39,6 @@ const Index: NextPageWithLayout = () => {
   )
 }
 
-Index.getLayout = createGetAppLayout({isHome: false, label: "カラオケ履歴"})
+Index.getLayout = createGetAppLayout({ isHome: false, label: 'カラオケ履歴' })
 
 export default Index

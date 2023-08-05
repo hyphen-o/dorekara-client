@@ -50,6 +50,6 @@ const Config: NextPageWithLayout = () => {
   )
 }
 
-Config.getLayout = createGetAppLayout({label: "ユーザ設定"})
+Config.getLayout = createGetAppLayout({ label: 'ユーザ設定' })
 
 export default Config
