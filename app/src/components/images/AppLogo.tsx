@@ -11,8 +11,8 @@ const AppLogo: FC<Props> = () => {
         src='/images/logos/applogo.png'
         alt='dorekara-app-logo'
         css={styles.image}
-        width={135}
-        height={135}
+        width={120}
+        height={120}
       ></Image>
     </>
   )

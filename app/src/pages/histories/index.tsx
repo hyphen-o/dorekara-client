@@ -1,7 +1,6 @@
 import { historyApi } from '@/api/routes/HistoriesApi'
 import DatesButton from '@/components/buttons/squarebuttons/DatesButton'
 import { createGetAppLayout } from '@/components/layouts/AppLayout'
-import Title from '@/components/texts/PageTitle'
 import { NextPageWithLayout } from '@/components/types/Layout.type'
 import { setDate } from '@/redux/slices/dateSlice'
 import { DateState } from '@/redux/types/dateSlice.type'
@@ -28,7 +27,6 @@ const Index: NextPageWithLayout = () => {
   return (
     <>
       <div css={styles.wrapper}>
-        <Title title='カラオケ履歴'></Title>
         {dates.map((date) => {
           return (
             <>
@@ -41,6 +39,6 @@ const Index: NextPageWithLayout = () => {
   )
 }
 
-Index.getLayout = createGetAppLayout()
+Index.getLayout = createGetAppLayout({isHome: false, label: "カラオケ履歴"})
 
 export default Index
