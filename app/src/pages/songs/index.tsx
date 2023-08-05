@@ -2,7 +2,6 @@ import { songApi } from '@/api/routes/SongApi'
 import CreateButton from '@/components/buttons/CreateButton'
 import SongsButton from '@/components/buttons/squarebuttons/SongsButton'
 import { createGetAppLayout } from '@/components/layouts/AppLayout'
-import Title from '@/components/texts/PageTitle'
 import { NextPageWithLayout } from '@/components/types/Layout.type'
 import { setSong } from '@/redux/slices/songSlice'
 import { SongState } from '@/redux/types/songSlice.type'
@@ -30,7 +29,6 @@ const Index: NextPageWithLayout = () => {
   return (
     <>
       <div css={styles.wrapper}>
-        <Title title='曲一覧'></Title>
         {songs.map((song) => {
           return (
             <>
@@ -38,12 +36,12 @@ const Index: NextPageWithLayout = () => {
             </>
           )
         })}
-        <CreateButton></CreateButton>
+        <CreateButton />
       </div>
     </>
   )
 }
 
-Index.getLayout = createGetAppLayout()
+Index.getLayout = createGetAppLayout({isHome: false, label: "楽曲一覧"})
 
 export default Index
